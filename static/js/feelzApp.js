@@ -32,8 +32,11 @@ function hideNewPostForm() {
 
 // pop up selected post's full post
 function popupPost(e) {
-	console.log("clicked");
 	document.getElementById('popup_container_panel').style.display = "block";
+}
+
+function hidePopupPost(e) {
+  document.getElementById('popup_container_panel').style.display = "none";
 }
 
 // add the following:
