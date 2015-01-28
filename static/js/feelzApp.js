@@ -22,6 +22,10 @@ function postButtonToggle(e) {
   });
 }
 
+function hideNewPostForm() {
+  document.getElementById('popup_container_form').style.display = "none";
+}
+
 // pop up selected post's full post
 function popupPost(e) {
 	console.log("clicked");
