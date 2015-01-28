@@ -13,8 +13,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/FeelzApp.js"></script>
 
-	<!-- this is a comment in HTML -->
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,15 +25,16 @@
 <!-- fixed position navibar on top of screen -->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="navbar-header">
+		<!-- collapse formatting for mobile -->
   		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
    		 	<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
         	<span class="icon-bar"></span>
     	    <span class="icon-bar"></span>
-			</button>
+		</button>
 		<!-- navibar title -->
 		<a class="navbar-brand" href="#">Feelz</a>
-		<!-- right align -->
+		<!-- right align, wrap in form to add another class -->
 		<form class="pull-right">
 				<!--- make newpost button on the navibar -->
 				<!-- A navigation bar type of button, this will center it in the bar height wise -->
@@ -45,11 +44,61 @@
 
 <body>
 	<div class="container">
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+    		<h3 class="panel-title">Post title</h3>
+  		  </div>
+		  <div class="panel-body">
+		    List posts here, this is a silly placeholder
+		  </div>
+		</div>
 
-		<div class="post">
-			<!--- list all of the posts currently in the queue -->
-				<p>List posts here, maybe insert silly placeholder post</p>
-			</a>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+    		<h3 class="panel-title">Post title</h3>
+  		  </div>
+		  <div class="panel-body">
+		    Here is an example of different panel types used to hold posts
+		  </div>
+		</div>
+
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+    		<h3 class="panel-title">Post title</h3>
+  		  </div>
+		  <div class="panel-body">
+		    Here is an example of different panel types used to hold posts
+		  </div>
+		</div>
+
+		<div class="panel panel-info">
+		  <div class="panel-heading">
+    		<h3 class="panel-title">Post title</h3>
+  		  </div>
+		  <div class="panel-body">
+		    Here is an example of different panel types used to hold posts
+		  </div>
+		</div>
+
+		<div class="panel panel-warning">
+		  <div class="panel-heading">
+    		<h3 class="panel-title">Post title</h3>
+  		  </div>
+		  <div class="panel-body">
+		    Here is an example of different panel types used to hold posts
+		  </div>
+		</div>
+
+		<div class="panel panel-danger">
+		  <div class="panel-heading">
+    		<h3 class="panel-title">Post title</h3>
+  		  </div>
+		  <div class="panel-body">
+		    Here is an example of different panel types used to hold posts
+		  </div>
+		</div>
+
 	</div>
 </body>
 

@@ -12,23 +12,23 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/FeelzApp.js"></script>
 
-	<!-- this is a comment in HTML -->
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->        
+
 <!-- fixed position navibar on top of screen -->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="navbar-header">
+		<!-- collapse formatting for mobile -->
   		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
    		 	<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
         	<span class="icon-bar"></span>
     	    <span class="icon-bar"></span>
-			</button>
+		</button>
 		<!-- navibar title -->
 		<a class="navbar-brand" href="#">Feelz</a>
 		<!-- right align -->
@@ -44,43 +44,41 @@
 <body>
 	<div class="container">
 
-		<div>
-			<!-- add text box -->
-			<textarea rows="10" cols="50">
-				Enter text here
-			</textarea>
-		</div>
+	<!-- add text box -->
+	<textarea rows="10" cols="50"></textarea>
 
-
-		<div class="dropdown">
-			<!-- add attach dropdown menu-->
-		 	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-		    	Attach
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Video</a></li>
-		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Audio</a></li>
-		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Image</a></li>
-		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Etc</a></li>
-			</ul>
-		</div>
-
-		<div class="postButton">
-			<!-- add new post to post list, make post button-->
-			<a href="index.html">
-				<button type="button" class="btn btn-default btn-lg">
-					Post
+	<!-- make a row of buttons -->
+	<div class="row">
+		<!-- this feature takes up 8 column units -->
+		<div class="col-md-8">
+			<div class="dropdown">
+				<!-- add attach dropdown menu -->
+			 	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+			    	Attach
+					<span class="caret"></span>
 				</button>
-			</a>
+				<!-- dropdown menu items -->
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+			    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Video</a></li>
+			    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Audio</a></li>
+			    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Image</a></li>
+			    	<!-- for now, leaving etc in menu.  NEEDS TO BE REMOVED -->
+			    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Etc</a></li>
+				</ul>
+			</div>
 		</div>
 
-
-
-
-
-
-
+		<!-- this features takes up 4 colum units -->
+		<div class="col-md-4">
+			<div class="postButton">
+				<!-- add new post to post list, make post button, button classes can be directly
+					 added to <a> -->
+				<!-- for now, link back to home page.  will actually need "input" type for coding -->
+				<!--<input class="btn btn-default btn-md" type="submit" value="Post"> -->
+				<a class="btn btn-default btn-md" href="index.html">Post</a>
+			</div>
+		</div>
+	</div>
 
 </body>
 
