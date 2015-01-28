@@ -8,17 +8,9 @@
  */
 
 
- /* button classes */
-.backButton {
-
-}
-
-.postButton {
-
-}
-
-.newPostButton {
-
+ /* body padding for the fixed navibar */
+body { 
+	padding-top: 70px; 
 }
 
  /* post classes */
