@@ -8,32 +8,30 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$("#postButtonToggle").click(postButtonToggle);
+	$(".postSnippet").click(popupPost);
 }
-// add the following:
-
-// update main post page with selected post pop up
-
-// bump a post script
-
-// update when new post is added
-
 //make newpost page into a popup form
 function postButtonToggle(e) {
   $(this).text(function(i, text) {
   	  if (text === "Back") {
-          div_hide();
+          document.getElementById('popup_container_form').style.display = "none";
       } else {
-          div_show();
+          document.getElementById('popup_container_form').style.display = "block";
       }
       return text === "Back" ? "New Post" : "Back";
   });
 }
 
-//Function To Display Popup
-function div_show() {
-    document.getElementById('popup_container').style.display = "block";
+// pop up selected post's full post
+function popupPost(e) {
+	console.log("clicked");
+	document.getElementById('popup_container_panel').style.display = "block";
 }
-//Function to Hide Popup
-function div_hide() {
-    document.getElementById('popup_container').style.display = "none";
+
+function hidePostPopup() {
+	document.getElementById('popup_container_panel').style.display = "none";	
 }
+
+// add the following:
+// bump a post script
+// update when new post is added

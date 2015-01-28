@@ -46,9 +46,8 @@
 
 	</nav>
 
-
 	<!-- new post popup form -->
-	<div id="popup_container">
+	<div id="popup_container_form">
 		<div id="newpost_form">
 			<form class="newPostForm" action="#" id="form" method="post" name="form">
 				<!-- add post title -->
@@ -89,20 +88,20 @@
 
 
 
-<!-- body for the home page posts -->
+<!-- body for the home page posts and post popups-->
 <body>
 	<div class="container">
 
-		<div class="panel panel-default">
+		<div class="panel panel-default postSnippet">
 		  <div class="panel-heading">
     		<h3 class="panel-title">Post title</h3>
   		  </div>
 		  <div class="panel-body">
-		    List posts here, this is a silly placeholder
+		    List of all the silly post snippets here.
 		  </div>
 		</div>
 
-		<div class="panel panel-primary">
+		<div class="panel panel-primary postSnippet">
 		  <div class="panel-heading">
     		<h3 class="panel-title">Post title</h3>
   		  </div>
@@ -111,7 +110,7 @@
 		  </div>
 		</div>
 
-		<div class="panel panel-success">
+		<div class="panel panel-success postSnippet">
 		  <div class="panel-heading">
     		<h3 class="panel-title">Post title</h3>
   		  </div>
@@ -120,16 +119,16 @@
 		  </div>
 		</div>
 
-		<div class="panel panel-info">
+		<div class="panel panel-info postSnippet">
 		  <div class="panel-heading">
     		<h3 class="panel-title">Post title</h3>
   		  </div>
 		  <div class="panel-body">
-		    I'm stressed >.<
+		    I'm so stressed >.<
 		  </div>
 		</div>
 
-		<div class="panel panel-warning">
+		<div class="panel panel-warning postSnippet">
 		  <div class="panel-heading">
     		<h3 class="panel-title">Post title</h3>
   		  </div>
@@ -138,7 +137,7 @@
 		  </div>
 		</div>
 
-		<div class="panel panel-danger">
+		<div class="panel panel-danger postSnippet">
 		  <div class="panel-heading">
     		<h3 class="panel-title">Post title</h3>
   		  </div>
@@ -147,6 +146,21 @@
 		  </div>
 		</div>
 
+	</div>
+
+	<!-- post popup -->
+	<div id="popup_container_panel">
+		<div class="panel panel-default postFull">
+			<div class="panel-heading clearfix">
+    			<h3 class="panel-title pull-left">Post title</h3>
+    			<div class="btn-group pull-right">
+    				<a onclick="hidePostPopup()" class="btn btn-default btn-sm">bump</a>
+    				<a onclick="hidePostPopup()" class="btn btn-default btn-sm">close</a>
+    			</div>
+  		 	</div>
+		 	<div class="panel-body">
+		    	This is the full post text!
+		  	</div>
 	</div>
 </body>
 
