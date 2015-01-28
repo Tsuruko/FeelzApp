@@ -8,11 +8,15 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$("#postButtonToggle").click(postButtonToggle);
+
+  //temporary
+  $("#postSubmission").click(postButtonToggle);
+
 	$(".postSnippet").click(popupPost);
 }
 //make newpost page into a popup form
 function postButtonToggle(e) {
-  $(this).text(function(i, text) {
+  $('#postButtonToggle').text(function(i, text) {
   	  if (text === "Back") {
           document.getElementById('popup_container_form').style.display = "none";
       } else {
@@ -30,11 +34,6 @@ function hideNewPostForm() {
 function popupPost(e) {
 	console.log("clicked");
 	document.getElementById('popup_container_panel').style.display = "block";
-}
-
-function hidePostPopup() {
-  document.getElementById('postButtonToggle').text("New Post");
-	document.getElementById('popup_container_panel').style.display = "none";	
 }
 
 // add the following:
