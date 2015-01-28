@@ -33,5 +33,7 @@ function hidePostPopup() {
 }
 
 // add the following:
+
 // bump a post script
+
 // update when new post is added
