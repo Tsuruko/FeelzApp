@@ -1,15 +1,13 @@
-'use strict';
-
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initializePage();
-})
+    initializePage();
+});
 
 /*
  * Function that is called when the document is ready.
  */
- 
 function initializePage() {
+	$("#postButtonToggle").click(postButtonToggle);
 }
 // add the following:
 
@@ -20,15 +18,22 @@ function initializePage() {
 // update when new post is added
 
 //make newpost page into a popup form
-$(function(){
-    $('[data-toggle=popover].newPostButton').popover({ 
-        html: true, 
-        container: 'body',
-        content: function() {
-          return $('#popover_content_wrapper').html();
-        }
-        
-    });
+function postButtonToggle(e) {
+  $(this).text(function(i, text) {
+  	  if (text === "Back") {
+          div_hide();
+      } else {
+          div_show();
+      }
+      return text === "Back" ? "New Post" : "Back";
+  });
+}
 
-});
-
+//Function To Display Popup
+function div_show() {
+    document.getElementById('popup_container').style.display = "block";
+}
+//Function to Hide Popup
+function div_hide() {
+    document.getElementById('popup_container').style.display = "none";
+}

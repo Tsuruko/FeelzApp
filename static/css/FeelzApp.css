@@ -29,39 +29,50 @@ body {
 
  }
 
- .snippet p {
-
- }
-
- .postFormat p {
-
- }
-
  /* images */
-
  img .thumbnail {
 
  }
 
  /*  new post page */
+form {
+	width: 100%;
+	height: 100%;
+	padding:10px 50px;
+	border:2px solid gray;
+	border-radius:10px;
+	/*font-family:raleway;*/
+	background-color:#fff
+}
+
+#popup_container {
+	padding-top: 70px; 
+	width: 100%;
+	height: 100%;
+	opacity: .95;
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+	background-color: #313131;
+	overflow: auto
+}
+
+#newpost_form {
+	position:absolute;
+	width: 90%;
+	left: 5%;
+	height: 80%;
+	top: 10%;
+	/*font-family:'Raleway',sans-serif */
+}
+
 textarea {
-	padding-left: 1%;
-	width: 98%;
-}
-
-.newPostButton {
-
-}
-
-.popover {
-	max-width: 100%;
-	right:1% !important;    
-    left: 1% !important;
-    bottom: 1% !important;
-    margin-right:1%;
-}
-
-.popover .arrow {
-	right:0;
-    margin-right:2%;
+	width:82%;
+	height: 60%;
+	margin-top:30px;
+	border:1px solid #ccc;
+	font-size:16px;
+	/*font-family:raleway; */
+	margin-bottom:30px;
 }

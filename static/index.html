@@ -38,62 +38,53 @@
 			<!-- navibar title -->
 			<a class="navbar-brand" href="#">Feelz</a>
 
-
-			<!--- make newpost button on the navibar -->
-			<!-- right align, wrap in form to add another class -->
-			<form class="pull-right">
-				<!-- A navigation bar type of button, this will center it automatically in the bar height wise.  Add "newPostButton" class for identification in javascript -->
-				<a type="button" class="btn btn-default navbar-btn newPostButton" data-toggle="popover" data-placement="bottom" data-container="body" >New Post</a>
-			</form>
+			<!--- make newpost button on the navibar.  It will change to back on form load. -->
+			<!-- pull-right: right align -->
+			<!-- navbar-btn: formatted button for navbar -->
+			<button id="postButtonToggle" type="button" class="btn btn-default navbar-btn pull-right"> New Post</button>
+		</div>
 
 	</nav>
 
+
 	<!-- new post popup form -->
-	<div id="popover_content_wrapper" style="display: none">
-	  <form action="" role="form">
-	    <div class="form-group" style="margin-left: 1%">
-	    	<!-- add post title -->
-	    	Post Title:<br>
-			<input type="text" name="postTitle">
-			<br>
-	    	<!-- add text box -->
-			<textarea rows="10" cols="42"></textarea>
-			<!-- make a row of buttons -->
-			<div class="row">
-				<!-- this feature takes up 8 column units -->
-				<div class="col-md-8">
-					<div class="dropdown">
-						<!-- add attach dropdown menu -->
-					 	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-					    	Attach
-							<span class="caret"></span>
-						</button>
-						<!-- dropdown menu items -->
-						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Video</a></li>
-					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Audio</a></li>
-					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Image</a></li>
-					    	<!-- for now, leaving etc in menu.  NEEDS TO BE REMOVED -->
-					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Etc</a></li>
-						</ul>
+	<div id="popup_container">
+		<div id="newpost_form">
+			<form class="newPostForm" action="#" id="form" method="post" name="form">
+				<!-- add post title -->
+				<input id="newPostTitle" name="newPostTitle" placeholder="Post Title" type="text"><br/>
+				<!-- add text box -->
+				<textarea id="newPostContent" name="newPostContent" placeholder="Enter text here"></textarea>
+				<div id="newPostButtons" class="row">
+					<!-- this feature takes up 8 column units -->
+					<div class="col-md-6">
+						<!-- Single button dropdown menu for attachments -->
+							<div class="btn-group">
+							  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							    Attach <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu">
+							    <li><a href="#">Video</a></li>
+							    <li><a href="#">Audio</a></li>
+							    <li><a href="#">Images</a></li>
+							    <li class="divider"></li>
+							    <li><a href="#">Etc</a></li>
+							  </ul>
+							</div>
 					</div>
+
+					<div class="col-md-6">
+						<!-- error checking goes here -->
+						<!--<a href="javascript:%20check_empty()" id="submit">Send</a>-->
+						<button type="submit" class="btn btn-default" onclick ="div_hide()">Post</button>
+					</div>
+
 				</div>
 
-				<!-- this features takes up 4 colum units -->
-				<div class="col-md-4">
-					<div class="postButton">
-						<!-- add new post to post list, make post button, button classes can be directly
-							 added to <a> -->
-						<button type="submit" class="btn btn-default">Post</button>
-					</div>
-				</div>
-			</div>
-	    </div>
-	      
-
-	  </form>
+				
+			</form>
+		</div>
 	</div>
-
 </body>
 
 
