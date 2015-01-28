@@ -21,32 +21,87 @@
     <![endif]-->        
 </head>
 
+<!-- body for the titlebar description and newPost popup -->
+<body>
+	<!-- fixed position navibar on top of screen -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="navbar-header">
+			<!-- collapse formatting for mobile, not needed for now unless we add a menu -->
+		<!--
+	  		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	   		 	<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	    	    <span class="icon-bar"></span>
+			</button>
+		-->
+			<!-- navibar title -->
+			<a class="navbar-brand" href="#">Feelz</a>
 
-<!-- fixed position navibar on top of screen -->
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="navbar-header">
-		<!-- collapse formatting for mobile, not needed for now unless we add a menu -->
-	<!--
-  		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-   		 	<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-        	<span class="icon-bar"></span>
-    	    <span class="icon-bar"></span>
-		</button>
-	-->
-		<!-- navibar title -->
-		<a class="navbar-brand" href="#">Feelz</a>
-		<!-- right align, wrap in form to add another class -->
-		<form class="pull-right">
-				<!--- make newpost button on the navibar -->
-				<!-- A navigation bar type of button, this will center it in the bar height wise -->
-			<a class="btn btn-default navbar-btn" href="newpost.html">New Post</a>
-		</form>
-</nav>
 
+			<!--- make newpost button on the navibar -->
+			<!-- right align, wrap in form to add another class -->
+			<form class="pull-right">
+				<!-- A navigation bar type of button, this will center it automatically in the bar height wise.  Add "newPostButton" class for identification in javascript -->
+				<a type="button" class="btn btn-default navbar-btn newPostButton" data-toggle="popover" data-placement="bottom" data-container="body" >New Post</a>
+			</form>
+
+	</nav>
+
+	<!-- new post popup form -->
+	<div id="popover_content_wrapper" style="display: none">
+	  <form action="" role="form">
+	    <div class="form-group" style="margin-left: 1%">
+	    	<!-- add post title -->
+	    	Post Title:<br>
+			<input type="text" name="postTitle">
+			<br>
+	    	<!-- add text box -->
+			<textarea rows="10" cols="42"></textarea>
+			<!-- make a row of buttons -->
+			<div class="row">
+				<!-- this feature takes up 8 column units -->
+				<div class="col-md-8">
+					<div class="dropdown">
+						<!-- add attach dropdown menu -->
+					 	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+					    	Attach
+							<span class="caret"></span>
+						</button>
+						<!-- dropdown menu items -->
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Video</a></li>
+					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Audio</a></li>
+					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Image</a></li>
+					    	<!-- for now, leaving etc in menu.  NEEDS TO BE REMOVED -->
+					    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Etc</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- this features takes up 4 colum units -->
+				<div class="col-md-4">
+					<div class="postButton">
+						<!-- add new post to post list, make post button, button classes can be directly
+							 added to <a> -->
+						<button type="submit" class="btn btn-default">Post</button>
+					</div>
+				</div>
+			</div>
+	    </div>
+	      
+
+	  </form>
+	</div>
+
+</body>
+
+
+
+<!-- body for the home page posts -->
 <body>
 	<div class="container">
-		
+
 		<div class="panel panel-default">
 		  <div class="panel-heading">
     		<h3 class="panel-title">Post title</h3>
@@ -61,7 +116,7 @@
     		<h3 class="panel-title">Post title</h3>
   		  </div>
 		  <div class="panel-body">
-		    Here is an example of different panel types used to hold posts
+		    I'm so sad :(
 		  </div>
 		</div>
 
@@ -70,7 +125,7 @@
     		<h3 class="panel-title">Post title</h3>
   		  </div>
 		  <div class="panel-body">
-		    Here is an example of different panel types used to hold posts
+		    I'm so excited! :D
 		  </div>
 		</div>
 
@@ -79,7 +134,7 @@
     		<h3 class="panel-title">Post title</h3>
   		  </div>
 		  <div class="panel-body">
-		    Here is an example of different panel types used to hold posts
+		    I'm stressed >.<
 		  </div>
 		</div>
 
@@ -88,7 +143,7 @@
     		<h3 class="panel-title">Post title</h3>
   		  </div>
 		  <div class="panel-body">
-		    Here is an example of different panel types used to hold posts
+		    I'm happy :)
 		  </div>
 		</div>
 
@@ -97,7 +152,7 @@
     		<h3 class="panel-title">Post title</h3>
   		  </div>
 		  <div class="panel-body">
-		    Here is an example of different panel types used to hold posts
+		    I'm mad >:(
 		  </div>
 		</div>
 
