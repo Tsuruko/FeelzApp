@@ -33,6 +33,7 @@ function popupPost(e) {
 }
 
 function hidePostPopup() {
+  document.getElementById('postButtonToggle').text("New Post");
 	document.getElementById('popup_container_panel').style.display = "none";	
 }
 
