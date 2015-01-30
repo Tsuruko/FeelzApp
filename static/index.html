@@ -26,21 +26,25 @@
 	<!-- fixed position navibar on top of screen -->
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-header">
-			<!-- collapse formatting for mobile, not needed for now unless we add a menu -->
+			<!-- collapse formatting for mobile, not needed for now unless we add more options
+				 on the navibar, i.e. the account settings and logout added and commented out-->
+			<!--
 	  		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuIcon">
 	   		 	<span class="sr-only">Menu</span>
 				<span class="icon-bar"></span>
 	        	<span class="icon-bar"></span>
 	    	    <span class="icon-bar"></span>
 			</button>
+			-->	
 			<!-- navibar title -->
 			<a class="navbar-brand" href="#">Feelz</a>
 
 			<!-- everything in this div will collapse into a menu button on mobile -->
 				<!-- pull-right: right align -->
-			<div class="collapse navbar-collapse pull-right" id="menuIcon">
+			<!--<div class="collapse navbar-collapse pull-right" id="menuIcon"> -->
 				<!-- this list will be collapsed into one on mobile instead of side by side -->
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right pull-right"> 
+									<!-- take out pull right here if collapsing -->
 					<li>
 						<!--- make newpost button on the navibar.  
 										It will change to back on form load. -->
@@ -50,22 +54,27 @@
 					<!-- devides new post and account settings in mobile -->
 				    <li class="divider"></li>
 					<li>
+						
 						<!-- keeps all of the contents lined up in a group of buttons -->
+						<!--
 						<div class="btn-group">
+						-->
 							<!-- dropdown-toggle: dropdown of menu options for account -->
-						  <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						    Account <span class="caret"></span>
-						  </button>
-						  <ul class="dropdown-menu" role="menu">
-						  	<li class="divider"></li>
-						    <li><a href="#">Settings</a></li>
-						    <li><a href="#">Logout</a></li>
-						  </ul>
+						<!--
+						  	<button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						    	Account <span class="caret"></span>
+						  	</button>
+						  	<ul class="dropdown-menu" role="menu">
+						  		<li class="divider"></li>
+						    	<li><a href="#">Settings</a></li>
+						    	<li><a href="#">Logout</a></li>
+						  	</ul>
 						</div>
+						-->
 					</li>
 				<ul>
 
-			</div>
+			<!-- </div> -->
 
 		</div>
 
