@@ -61,61 +61,9 @@
 
 <!-- body for the home page posts and post popups-->
 	<div class="container">
-
-		<div class="panel panel-default postSnippet">
-		  <div class="panel-heading">
-    		<h3 class="panel-title">Post title</h3>
-  		  </div>
-		  <div class="panel-body">
-		    List of all the silly post snippets here.
-		  </div>
-		</div>
-
-		<div class="panel panel-primary postSnippet">
-		  <div class="panel-heading">
-    		<h3 class="panel-title">Post title</h3>
-  		  </div>
-		  <div class="panel-body">
-		    I'm so sad :(
-		  </div>
-		</div>
-
-		<div class="panel panel-success postSnippet">
-		  <div class="panel-heading">
-    		<h3 class="panel-title">Post title</h3>
-  		  </div>
-		  <div class="panel-body">
-		    I'm so excited! :D
-		  </div>
-		</div>
-
-		<div class="panel panel-info postSnippet">
-		  <div class="panel-heading">
-    		<h3 class="panel-title">Post title</h3>
-  		  </div>
-		  <div class="panel-body">
-		    I'm so stressed >.<
-		  </div>
-		</div>
-
-		<div class="panel panel-warning postSnippet">
-		  <div class="panel-heading">
-    		<h3 class="panel-title">Post title</h3>
-  		  </div>
-		  <div class="panel-body">
-		    I'm happy :)
-		  </div>
-		</div>
-
-		<div class="panel panel-danger postSnippet">
-		  <div class="panel-heading">
-    		<h3 class="panel-title">Post title</h3>
-  		  </div>
-		  <div class="panel-body">
-		    I'm mad >:(
-		  </div>
-		</div>
-
+		{{#each posts}}
+			{{> postSnippet}}
+		{{/each}}
 	</div>
 
 	<!-- post popup -->
