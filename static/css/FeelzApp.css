@@ -17,17 +17,26 @@
 body { 
 	padding-top: 70px; 
 	text-align: center;
+    text-shadow: above;
+    background-color:#B8DBFF;
+    background-origin: border-box;	
 }
 
 .navbar-header {
 	margin-left:5px;
 	width:98%;
+    text-align: center;
 }
 
  /* post classes */
 .postSnippet {
  }
-
+.panel-title{
+    text-align: center;
+    }
+.panel-heading{
+    background-color: #C0C0C0
+    }
 .postFull {
 	opacity: 1.0;
 
