@@ -1,0 +1,111 @@
+/* see intoHci.css for examples from lab 3
+
+ add the following:
+
+ all styling for the app 
+  not needed for assignment 4
+
+ */
+
+
+ /* formatting for the navigation bar
+  *
+  * padding for space for fixed to top
+  * fix margins for aligning right
+  */
+
+body { 
+	padding-top: 70px; 
+	text-align: center;
+    text-shadow: above;
+    background-color:#B8DBFF;
+    background-origin: border-box;	
+}
+
+.menuIcon {
+	text-align: left;
+}
+
+ /* post classes */
+.postSnippet {
+ }
+.panel-title{
+    text-align: center;
+    }
+.panel-heading{
+    background-color: #C0C0C0
+    }
+.postFull {
+	opacity: 1.0;
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	height: 30%;
+ }
+
+ #popup_container_panel {
+	padding-top: 70px; 
+	width: 100%;
+	height: 100%;
+	opacity: .95;
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+	background-color: #B7B7B7;
+	overflow: auto;
+}
+
+ #popup_container_panel:after {
+ 	content: ' ';
+ 	opacity: 0.1;
+ }
+
+ /* images */
+ img .thumbnail {
+
+ }
+
+ /*  new post page */
+form {
+	width: 100%;
+	height: 100%;
+	padding:10px 50px;
+	border:2px solid gray;
+	border-radius:10px;
+	/*font-family:raleway;*/
+	background-color:#fff;
+}
+
+#popup_container_form {
+	padding-top: 70px; 
+	width: 100%;
+	height: 100%;
+	opacity: .95;
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+	background-color: #313131;
+	overflow: auto
+}
+
+#newpost_form {
+	position:absolute;
+	width: 90%;
+	left: 5%;
+	height: 80%;
+	top: 10%;
+	/*font-family:'Raleway',sans-serif */
+}
+
+textarea {
+	width:82%;
+	height: 60%;
+	margin-top:30px;
+	border:1px solid #ccc;
+	font-size:16px;
+	/*font-family:raleway; */
+	margin-bottom:30px;
+}
