@@ -22,6 +22,10 @@ body {
     background-origin: border-box;	
 }
 
+.menuIcon {
+	text-align: left;
+}
+
 .navbar-header {
 	margin-left:5px;
 	width:98%;
