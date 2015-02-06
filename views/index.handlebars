@@ -1,94 +1,45 @@
 <!doctype html>
 
 <html>
-<head>
-	<title>FeelzApp</title>	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/FeelzApp.css" rel="stylesheet">
+	<head>
+		<title>FeelzApp</title>	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="css/FeelzApp.css" rel="stylesheet">
+		<link href="css/feelzNaviBar.css" rel="stylesheet">
+	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	    <![endif]-->        
+	</head>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
-</head>
+	<!-- body for the titlebar description and newPost popup -->
+	<body>
+		<!-- fixed position navibar on top of screen -->
+		{{>feelzNaviBar}}
 
-<!-- body for the titlebar description and newPost popup -->
-<body>
-	<!-- fixed position navibar on top of screen -->
-	<script src="js/feelzNaviBar.js"></script>
+		<!-- new post popup form -->
+		{{> newPost}}
 
-	<!-- new post popup form -->
-	<div id="popup_container_form">
-		<div id="newpost_form">
-			<form class="newPostForm" action="#" id="form" method="post" name="form">
-				<!-- add post title -->
-				<input id="newPostTitle" name="newPostTitle" placeholder="Post Title" type="text"><br/>
-				<!-- add text box -->
-				<textarea id="newPostContent" name="newPostContent" placeholder="Enter text here"></textarea>
-				<div id="newPostButtons" class="row">
-					<!-- this feature takes up 6 column units -->
-					<div class="col-md-6">
-						<!-- Single button dropdown menu for attachments -->
-							<div class="btn-group">
-							  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							    Attach <span class="caret"></span>
-							  </button>
-							  <ul class="dropdown-menu" role="menu">
-							    <li><a href="#">Video</a></li>
-							    <li><a href="#">Audio</a></li>
-							    <li><a href="#">Images</a></li>
-							    <li class="divider"></li>
-							    <li><a href="#">Etc</a></li>
-							  </ul>
-							</div>
-					</div>
-					<div class="col-md-6">
-						<!-- error checking goes here -->
-						<!--<a href="javascript:%20check_empty()" id="submit">Send</a>-->
-						<!-- type="submit" -->
-						<button id="postSubmission" type="button" class="btn btn-default">Post</button>
-					</div>
-				</div>
-			</form>
+		<!-- home page posts list-->
+		<div class="container">
+			{{#each posts}}
+				{{>postSnippet}}
+			{{/each}}
 		</div>
-	</div>
 
-
-<!-- body for the home page posts and post popups-->
-	<div class="container">
-		{{#each posts}}
-			{{> postSnippet}}
-		{{/each}}
-	</div>
-
-	<!-- post popup -->
-	<div class="container">
-		<div id="popup_container_panel">
-			<div class="panel panel-default postFull">
-				<div class="panel-heading clearfix">
-	    			<h3 class="panel-title pull-left">Post title</h3>
-	    			<div class="btn-group pull-right">
-	    				<a onclick="hidePopupPost()" class="btn btn-default btn-sm">bump</a>
-	    				<a onclick="hidePopupPost()" class="btn btn-default btn-sm">close</a>
-	    			</div>
-	  		 	</div>
-			 	<div class="panel-body">
-			    	This is the full post text!
-			  	</div>
-		</div>
-	</div>
-</body>
-
+		<!-- post popup -->
+		{{>postFull}}
+	</body>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
+	<script src="jquery-1.11.2.min.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/feelzApp.js"></script>

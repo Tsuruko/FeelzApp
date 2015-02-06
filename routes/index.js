@@ -1,7 +1,7 @@
-
-var postData = require('../postData.json');
+// Get all of our post data
+var data = require('../postData.json');
 
 exports.view = function(req, res){
-	console.log(postData);
-	  res.render('index', postData);
+	console.log(data);
+	res.render('index', data);
 };

@@ -1,10 +1,4 @@
-/* see intoHci.css for examples from lab 3
-
- add the following:
-
- all styling for the app 
-  not needed for assignment 4
-
+/* css styling for main app homepage and navigation bar
  */
 
 
@@ -13,7 +7,6 @@
   * padding for space for fixed to top
   * fix margins for aligning right
   */
-
 body { 
 	padding-top: 70px; 
 	text-align: center;
@@ -22,19 +15,18 @@ body {
     background-origin: border-box;	
 }
 
-.menuIcon {
-	text-align: left;
-}
-
  /* post classes */
 .postSnippet {
  }
-.panel-title{
+
+.panel-title {
     text-align: center;
-    }
-.panel-heading{
+}
+
+.panel-heading {
     background-color: #C0C0C0
-    }
+}
+
 .postFull {
 	opacity: 1.0;
 
@@ -60,11 +52,6 @@ body {
  #popup_container_panel:after {
  	content: ' ';
  	opacity: 0.1;
- }
-
- /* images */
- img .thumbnail {
-
  }
 
  /*  new post page */

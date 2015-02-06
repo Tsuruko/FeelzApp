@@ -1,7 +1,34 @@
 {
 	"posts": [
 		{
+			"postCategory": "panel-default",
+			"postTitle": "Post Title",
 			"postInfo": "List of all the silly post snippets here."
+		},
+		{
+			"postCategory": "panel-primary",
+			"postTitle": "Post Title",
+			"postInfo": "I'm so sad :("
+		},
+		{
+			"postCategory": "panel-success",
+			"postTitle": "Post Title",
+			"postInfo": "I'm so excited! :D"
+		},
+		{
+			"postCategory": "panel-info",
+			"postTitle": "Post Title",
+			"postInfo": "I'm so stressed >.<"
+		},
+		{
+			"postCategory": "panel-warning",
+			"postTitle": "Post Title",
+			"postInfo": "I'm happy :)"
+		},
+		{
+			"postCategory": "panel-danger",
+			"postTitle": "Post Title",
+			"postInfo": "I'm mad >:("
 		}
 	]
 }
