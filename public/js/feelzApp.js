@@ -8,11 +8,11 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$("#postButtonToggle").click(postButtonToggle);
-
-  //temporary
-  $("#postSubmission").click(postButtonToggle);
+  //$("#postSubmission").click(submitPost);
 	$(".postSnippet").click(popupPost);
 }
+
+//new post function
 //make newpost page into a popup form
 function postButtonToggle(e) {
   $('#postButtonToggle').text(function(i, text) {
@@ -31,7 +31,15 @@ function hideNewPostForm() {
 
 // pop up selected post's full post
 function popupPost(e) {
-	document.getElementById('popup_container_panel').style.display = "block";
+  var cat = $(this).data("cat");
+  var title = $(this).data("title");
+  var info = $(this).data("full");
+
+  document.getElementById('fullPostCategory').className = cat;
+  document.getElementById('fullPostTitle').innerHTML = title;
+  document.getElementById('fullPostInfo').innerHTML = info;
+
+  document.getElementById('popup_container_panel').style.display = "block";
 }
 
 function hidePopupPost(e) {
@@ -42,4 +50,4 @@ function hidePopupPost(e) {
 
 // bump a post script
 
-// update when new post is added
+

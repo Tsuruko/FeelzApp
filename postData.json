@@ -2,33 +2,39 @@
 	"posts": [
 		{
 			"postCategory": "panel-default",
-			"postTitle": "Post Title",
-			"postInfo": "List of all the silly post snippets here."
+			"postTitle": "Post Example",
+			"postInfo": "List all the silly post snippets here.  This is in a json file so it...",
+			"fullPost": "List all the silly post snippets here.  This is in a json file so it is not modifiable.  Post Info snippets are 70 characters or less."
 		},
 		{
 			"postCategory": "panel-primary",
 			"postTitle": "Post Title",
-			"postInfo": "I'm so sad :("
+			"postInfo": "I'm so sad :(",
+			"fullPost": "I'm so sad :("
 		},
 		{
 			"postCategory": "panel-success",
 			"postTitle": "Post Title",
-			"postInfo": "I'm so excited! :D"
+			"postInfo": "I'm so excited! :D",
+			"fullPost": "I'm so excited! :D"
 		},
 		{
 			"postCategory": "panel-info",
 			"postTitle": "Post Title",
-			"postInfo": "I'm so stressed >.<"
+			"postInfo": "I'm so stressed >.<",
+			"fullPost": "I'm so stressed >.<"
 		},
 		{
 			"postCategory": "panel-warning",
 			"postTitle": "Post Title",
-			"postInfo": "I'm happy :)"
+			"postInfo": "I'm happy :)",
+			"fullPost": "I'm happy :)"
 		},
 		{
 			"postCategory": "panel-danger",
 			"postTitle": "Post Title",
-			"postInfo": "I'm mad >:("
+			"postInfo": "I'm mad >:(",
+			"fullPost": "I'm mad >:("
 		}
 	]
 }

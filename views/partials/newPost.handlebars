@@ -4,7 +4,8 @@
 
 	<div id="popup_container_form">
 		<div id="newpost_form">
-			<form class="newPostForm" action="#" id="form" method="post" name="form">
+			<!-- action = "#" -->
+			<form class="newPostForm" id="form" method="get" name="newPostForm" action="/newPostRe">
 				<!-- add post title -->
 				<input id="newPostTitle" name="newPostTitle" placeholder="Post Title" type="text"><br/>
 				<!-- add text box -->
@@ -30,7 +31,7 @@
 						<!-- error checking goes here -->
 						<!--<a href="javascript:%20check_empty()" id="submit">Send</a>-->
 						<!-- type="submit" -->
-						<button id="postSubmission" type="button" class="btn btn-default">Post</button>
+					    <input type="submit" id="postSubmission" class="btn btn-default" value="post"></input>
 					</div>
 				</div>
 			</form>

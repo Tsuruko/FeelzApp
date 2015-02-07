@@ -27,6 +27,10 @@ body {
     background-color: #C0C0C0
 }
 
+.panel-body {
+    word-wrap:break-word;
+}
+
 .postFull {
 	opacity: 1.0;
 
