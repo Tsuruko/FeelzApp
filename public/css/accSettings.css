@@ -1,0 +1,22 @@
+/* css styling for main app homepage and navigation bar
+ */
+
+
+ /* formatting for the navigation bar
+  *
+  * padding for space for fixed to top
+  * fix margins for aligning right
+  */
+
+
+ /* post classes */
+
+
+.panel-title {
+    text-align: left;
+}
+
+.panel-body {
+	text-align: left;
+    word-wrap:break-word;
+}

@@ -18,6 +18,7 @@ var login = require('./routes/login');
 var signup = require('./routes/signup');
 var forgotPass = require('./routes/forgotPass');
 var newPostRe = require('./routes/newPostRe');
+var changePass = require('./routes/changePassword');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.get('/', index.view);
  app.get('/Signup', signup.viewSignup);
  app.get('/Forgot_Password', forgotPass.viewForgotPass);
  app.get('/newPostRe', newPostRe.pushPost)
+ app.get('/changePassword', changePass.changePass)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

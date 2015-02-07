@@ -23,8 +23,16 @@ body {
     text-align: center;
 }
 
-.panel-heading {
-    background-color: #C0C0C0
+.panel-custom {
+ border-color: #E7C4F3;
+}
+
+.panel-custom > .panel-heading {
+  background-image: -webkit-linear-gradient(top, #EAD9F7 0%, #E7C4F3 100%);
+  background-image: linear-gradient(to bottom, #EAD9F7 0%, #E7C4F3 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);
+ 	border-color: #E7C4F3;
 }
 
 .panel-body {

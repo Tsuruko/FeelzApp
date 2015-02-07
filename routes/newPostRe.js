@@ -21,7 +21,7 @@ exports.pushPost = function(req, res){
   } else if (cat == 3) {
     newCategory = "panel-success";
   } else if (cat == 4) {
-    newCategory = "panel-info";
+    newCategory = "panel-custom";
   } else if (cat == 5) {
     newCategory = "panel-warning";
   } else if (cat == 6) {
@@ -43,15 +43,3 @@ exports.pushPost = function(req, res){
     res.render('index', data);
 
 };
-
-/*
-// update when new post is added
-function submitPost(e) {
-
-
-
-  //reset form
-  document.newPostForm.reset();
-  postButtonToggle();
-
-}*/
