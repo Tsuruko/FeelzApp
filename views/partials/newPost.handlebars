@@ -12,22 +12,30 @@
 				<textarea id="newPostContent" name="newPostContent" placeholder="Enter text here"></textarea>
 				<div id="newPostButtons" class="row">
 					<!-- this feature takes up 6 column units -->
-					<div class="col-md-6">
-						<!-- Single button dropdown menu for attachments -->
-							<div class="btn-group">
-							  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							    Attach <span class="caret"></span>
-							  </button>
-							  <ul class="dropdown-menu" role="menu">
-							    <li><a href="#">Video</a></li>
-							    <li><a href="#">Audio</a></li>
-							    <li><a href="#">Images</a></li>
-							    <li class="divider"></li>
-							    <li><a href="#">Etc</a></li>
-							  </ul>
-							</div>
+					<div class="col-md-1 pull-left">
+							<!-- Single button dropdown menu for choosing category -->
+							<select type="button" class="form-control" name="newPostCategory">
+								<option>Category</option>
+							    <option value="1">One</option>
+							    <option value="2">Two</option>
+							    <option value="3">Three</option>
+							    <option value="4">Four</option>
+							    <option value="5">Five</option>
+							    <option value="6">Six</option>
+							</select>
 					</div>
-					<div class="col-md-6">
+
+					<div class="col-md-1 pull-left">
+						<!-- Single button dropdown menu for attachments -->
+						<select type="button" class="form-control" name="attach">
+							<option>Attach</option>
+						    <option value="one">Video</option>
+						    <option value="two">Audio</option>
+						    <option value="three">Images</option>
+						</select>
+					</div>
+
+					<div class="col-md-6 pull-right">
 						<!-- error checking goes here -->
 						<!--<a href="javascript:%20check_empty()" id="submit">Send</a>-->
 						<!-- type="submit" -->
