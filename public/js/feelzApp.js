@@ -11,10 +11,7 @@ function initializePage() {
 
   //temporary
   $("#postSubmission").click(postButtonToggle);
-
 	$(".postSnippet").click(popupPost);
-
-  //$("#feelzNaviBar").load("naviBar.html");
 }
 //make newpost page into a popup form
 function postButtonToggle(e) {

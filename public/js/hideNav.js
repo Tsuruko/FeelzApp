@@ -1,0 +1,1 @@
+$("#postButtonToggle").css('visibility', 'hidden');
