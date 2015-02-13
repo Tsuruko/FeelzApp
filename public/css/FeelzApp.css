@@ -90,7 +90,7 @@ form {
 	left: 0;
 	display: none;
 	position: fixed;
-	background-color: #313131;
+	background-color: rgba(0,0,0,0.5);
 	overflow: auto
 }
 

@@ -12,12 +12,26 @@ function initializePage() {
   $("#expandPost").click(popupPost);
 
 
-      $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        if (document.getElementById('popup_container_form').style.display != "block") {
-          $("#wrapper").toggleClass("toggled");
-        }
-    });
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    hidePopupPost();
+    if (document.getElementById('popup_container_form').style.display != "block") {
+      $("#wrapper").toggleClass("toggled");
+    }
+  });
+
+  $("#popup_container_panel").click(function(e) {
+      if ( $("#popup_container_panel").has(e.target).length === 0 ) {
+        $("#popup_container_panel").hide();
+      }
+  });
+
+  $("#popup_container_form").click(function(e) {
+      if ( $("#popup_container_form").has(e.target).length === 0 ) {
+        postButtonToggle(null);
+        $("#popup_container_form").hide();
+      }
+  });
 }
 
 //new post function
@@ -27,16 +41,12 @@ function postButtonToggle(e) {
   	  if (text === "Back") {
           document.getElementById('popup_container_form').style.display = "none";
       } else {
-          document.getElementById('wrapper').className = "";
+          $("#wrapper").removeClass("toggled")
           hidePopupPost();
           document.getElementById('popup_container_form').style.display = "block";
       }
       return text === "Back" ? "New Post" : "Back";
   });
-}
-
-function hideNewPostForm() {
-  document.getElementById('popup_container_form').style.display = "none";
 }
 
 // pop up selected post's full post
@@ -50,7 +60,8 @@ function popupPost(e) {
   document.getElementById('fullPostTitle').innerHTML = title;
   document.getElementById('fullPostInfo').innerHTML = info;
 
-  console.log($(this).position().top);
+  document.getElementById('wrapper').className = "";
+
   document.getElementById('popup_container_panel').style.display = "block";
 	
 }
