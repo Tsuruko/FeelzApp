@@ -8,7 +8,6 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$("#postButtonToggle").click(postButtonToggle);
-  //$("#postSubmission").click(submitPost);
 	$(".postSnippet").click(popupPost);
 }
 
@@ -44,6 +43,29 @@ function popupPost(e) {
 }
 function hidePopupPost(e) {
   document.getElementById('popup_container_panel').style.display = "none";
+}
+
+function checkNewPostForm(form) {
+
+  if (form.newPostTitle.value == "") {
+    alert("Error: Post Title cannot be blank!");
+    form.newPostTitle.focus();
+    return false;
+  }
+
+  if (form.newPostContent.value == "") {
+    alert("Error: Post Content cannot be blank!");
+    form.newPostContent.focus();
+    return false;
+  }
+
+  if (form.newPostCategory.value == "Category") {
+    alert("Error: Please select a post category!");
+    form.newPostCategory.focus();
+    return false;
+  }
+
+  return true;
 }
 
 // add the following:
