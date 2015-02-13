@@ -20,12 +20,12 @@ exports.changePass = function(req, res) {
 
 	if (old != loggedIn["password"]) {
 		console.log("error, password doesn't match old password");
-		return;
+		//return;
 	}
 
 	if (confirm != newP) {
 		console.log("error, passwords don't match");
-		return;
+		//return;
 	}
 
 	loggedIn["password"] = newP;
