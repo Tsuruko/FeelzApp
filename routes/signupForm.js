@@ -1,7 +1,8 @@
 // Get all of our previous user data
 var data = require('../userData.json');
+var postData = require('../postData.json');
 
-exports.viewSignup = function(req, res){
+exports.submitSignup = function(req, res){
 
 	//var entered_email = req.query.signup_email;
 
@@ -29,5 +30,5 @@ exports.viewSignup = function(req, res){
 	}
 	*/
 	
-	res.render('signup', LoggedIn);
+	res.render('index', postData);
 };

@@ -21,9 +21,8 @@ var help = require('./routes/help');
 var login = require('./routes/login');
 var loginForm = require('./routes/loginForm');
 var signup = require('./routes/signup');
+var signupForm = require('./routes/signupForm');
 var forgotPass = require('./routes/forgotPass');
-
-
 
 var app = express();
 
@@ -49,17 +48,21 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-// Example route
- app.get('/Account_Settings', accSettings.viewAccSettings);
- app.get('/About', about.viewAbout);
- app.get('/Help', help.viewHelp);
- app.get('/Login', login.viewLogin);
- app.get('/LoginFormSubmit', loginForm.submitLogin);
- app.get('/Signup', signup.viewSignup);
- app.get('/Forgot_Password', forgotPass.viewForgotPass);
- app.get('/newPostRe', newPostRe.pushPost);
- app.get('/changePassword', changePass.changePass);
-  app.get('/category/:id', category.viewCategory);
+app.get('/newPostRe', newPostRe.pushPost);
+app.get('/category/:id', category.viewCategory);
+
+app.get('/Account_Settings', accSettings.viewAccSettings);
+app.get('/changePassword', changePass.changePass);
+
+app.get('/About', about.viewAbout);
+app.get('/Help', help.viewHelp);
+
+app.get('/Login', login.viewLogin);
+app.get('/LoginFormSubmit', loginForm.submitLogin);
+app.get('/Signup', signup.viewSignup);
+app.get('/SignupFormSubmit', signupForm.submitSignup);
+app.get('/Forgot_Password', forgotPass.viewForgotPass);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
