@@ -9,17 +9,21 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
-// Example route
-// var user = require('./routes/user');
+var newPostRe = require('./routes/newPostRe');
+var category = require('./routes/category');
+
 var accSettings = require('./routes/accSettings');
+var changePass = require('./routes/changePassword');
+
 var about = require('./routes/about');
 var help = require('./routes/help');
+
 var login = require('./routes/login');
+var loginForm = require('./routes/loginForm');
 var signup = require('./routes/signup');
 var forgotPass = require('./routes/forgotPass');
-var newPostRe = require('./routes/newPostRe');
-var changePass = require('./routes/changePassword');
-var category = require('./routes/category');
+
+
 
 var app = express();
 
@@ -50,6 +54,7 @@ app.get('/', index.view);
  app.get('/About', about.viewAbout);
  app.get('/Help', help.viewHelp);
  app.get('/Login', login.viewLogin);
+ app.get('/LoginFormSubmit', loginForm.submitLogin);
  app.get('/Signup', signup.viewSignup);
  app.get('/Forgot_Password', forgotPass.viewForgotPass);
  app.get('/newPostRe', newPostRe.pushPost);

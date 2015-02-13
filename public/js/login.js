@@ -7,7 +7,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('#signupButton').click(signupbox);
+  $('#signupButton').click(signup);
   $('#signupButton').click(test);
 }
 
