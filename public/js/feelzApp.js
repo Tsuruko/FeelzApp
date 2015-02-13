@@ -12,9 +12,7 @@ $(document).ready(function() {
 function initializePage() {
   var mq = window.matchMedia( "(min-width: 768px)" );
 
-  if (mq.matches) {
-    $("#wrapper").toggleClass("toggled");
-  } 
+  if (mq.matches) $("#wrapper").toggleClass("toggled");
 
 	$("#postButtonToggle").click(postButtonToggle);
 	$(".postSnippet").click(popupPost);
