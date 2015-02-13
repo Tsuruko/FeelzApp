@@ -9,19 +9,14 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
-var newPostRe = require('./routes/newPostRe');
-var category = require('./routes/category');
 
 var accSettings = require('./routes/accSettings');
-var changePass = require('./routes/changePassword');
 
 var about = require('./routes/about');
 var help = require('./routes/help');
 
 var login = require('./routes/login');
-var loginForm = require('./routes/loginForm');
 var signup = require('./routes/signup');
-var signupForm = require('./routes/signupForm');
 var forgotPass = require('./routes/forgotPass');
 
 var app = express();
@@ -47,20 +42,20 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
-app.get('/newPostRe', newPostRe.pushPost);
-app.get('/category/:id', category.viewCategory);
+app.get('/', index.viewHome);
+app.get('/newPostRe', index.pushPost);
+app.get('/category/:id', index.viewCategory);
 
 app.get('/Account_Settings', accSettings.viewAccSettings);
-app.get('/changePassword', changePass.changePass);
+app.get('/changePassword', accSettings.changePass);
 
 app.get('/About', about.viewAbout);
 app.get('/Help', help.viewHelp);
 
 app.get('/Login', login.viewLogin);
-app.get('/LoginFormSubmit', loginForm.submitLogin);
+app.get('/LoginFormSubmit', login.submitLogin);
 app.get('/Signup', signup.viewSignup);
-app.get('/SignupFormSubmit', signupForm.submitSignup);
+app.get('/SignupFormSubmit', signup.submitSignup);
 app.get('/Forgot_Password', forgotPass.viewForgotPass);
 
 
