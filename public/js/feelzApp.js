@@ -9,6 +9,8 @@ $(document).ready(function() {
 function initializePage() {
 	$("#postButtonToggle").click(postButtonToggle);
 	$(".postSnippet").click(popupPost);
+  $("#expandPost").click(popupPost);
+
 
       $("#menu-toggle").click(function(e) {
         e.preventDefault();
@@ -39,6 +41,7 @@ function hideNewPostForm() {
 
 // pop up selected post's full post
 function popupPost(e) {
+  e.preventDefault();
   var cat = $(this).data("cat");
   var title = $(this).data("title");
   var info = $(this).data("full");
@@ -47,6 +50,8 @@ function popupPost(e) {
   document.getElementById('fullPostTitle').innerHTML = title;
   document.getElementById('fullPostInfo').innerHTML = info;
 
+  console.log($(this).position().top);
+  document.getElementById('postFull').style.marginTop = ($(this).position().top - 5) + "px";
   document.getElementById('popup_container_panel').style.display = "block";
 	
 }

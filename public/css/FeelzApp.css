@@ -44,6 +44,7 @@ body {
 }
 
 .postSnippet {
+	position: static;
  }
 
 .postFull {
@@ -51,8 +52,8 @@ body {
 
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
-	height: 30%;
+	width: 90%;
+	height: 32%;
  }
  
 
@@ -65,14 +66,9 @@ body {
 	left: 0;
 	display: none;
 	position: fixed;
-	background-color: #B7B7B7;
+	background-color: rgba(0,0,0,0.5);
 	overflow: auto;
 }
-
- #popup_container_panel:after {
- 	content: ' ';
- 	opacity: 0.1;
- }
 
  /*  new post page */
 form {
