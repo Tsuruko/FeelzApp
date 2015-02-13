@@ -12,7 +12,9 @@ function initializePage() {
 
       $("#menu-toggle").click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+        if (document.getElementById('popup_container_form').style.display != "block") {
+          $("#wrapper").toggleClass("toggled");
+        }
     });
 }
 
@@ -23,6 +25,8 @@ function postButtonToggle(e) {
   	  if (text === "Back") {
           document.getElementById('popup_container_form').style.display = "none";
       } else {
+          document.getElementById('wrapper').className = "";
+          hidePopupPost();
           document.getElementById('popup_container_form').style.display = "block";
       }
       return text === "Back" ? "New Post" : "Back";
@@ -46,7 +50,7 @@ function popupPost(e) {
   document.getElementById('popup_container_panel').style.display = "block";
 	
 }
-function hidePopupPost(e) {
+function hidePopupPost() {
   document.getElementById('popup_container_panel').style.display = "none";
 }
 
