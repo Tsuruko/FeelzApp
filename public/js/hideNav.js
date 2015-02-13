@@ -1,2 +1,5 @@
 $("#postButtonToggle").css('visibility', 'hidden');
-$("#menu-toggle").css('visibility', 'hidden');
+
+$("#menu-toggle").click(function(e) {
+	$("#wrapper").toggleClass("toggled");
+});
