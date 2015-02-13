@@ -40,8 +40,8 @@ function popupPost(e) {
   document.getElementById('fullPostInfo').innerHTML = info;
 
   document.getElementById('popup_container_panel').style.display = "block";
+	
 }
-
 function hidePopupPost(e) {
   document.getElementById('popup_container_panel').style.display = "none";
 }
