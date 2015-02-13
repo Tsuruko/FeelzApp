@@ -9,6 +9,11 @@ $(document).ready(function() {
 function initializePage() {
 	$("#postButtonToggle").click(postButtonToggle);
 	$(".postSnippet").click(popupPost);
+
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 }
 
 //new post function
@@ -67,6 +72,8 @@ function checkNewPostForm(form) {
 
   return true;
 }
+
+
 
 // add the following:
 
