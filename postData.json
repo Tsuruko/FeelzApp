@@ -3,38 +3,38 @@
 		{
 			"postCategory": "panel-default",
 			"postTitle": "New on here..",
-			"postInfo": "This is pretty cool..",
+			"postInfo": "This is pretty cool..I'm new here. Hello everyone!",
 			"fullPost": "This is pretty cool..I'm new here. Hello everyone!"
 		},
 		{
 			"postCategory": "panel-primary",
 			"postTitle": "Horrible Day...",
-			"postInfo": "I'm so sad :(",
-			"fullPost": "I'm so sad :(! Today, was such a bad day. I lost my car keys and wallet. Could it get any worse??)"
+			"postInfo": "I'm so sad :(! Today, was such a bad day. I lost my car keys and wallet...",
+			"fullPost": "I'm so sad :(! Today, was such a bad day. I lost my car keys and wallet. Could it get any worse??"
 		},
 		{
 			"postCategory": "panel-success",
 			"postTitle": "BEST DAY EVER!!",
-			"postInfo": "I'm so excited! :D",
+			"postInfo": "I'm so excited! :D Today, I got a brand new iPhone! I've had the same o...",
 			"fullPost": "I'm so excited! :D Today, I got a brand new iPhone! I've had the same old crappy phone for years!"
 		},
 		{
 			"postCategory": "panel-custom",
 			"postTitle": "Midterms....",
-			"postInfo": "I'm so stressed >.<",
+			"postInfo": "I'm so stressed >.< I have two midterm tomorrow and I feel like I don't...",
 			"fullPost": "I'm so stressed >.< I have two midterm tomorrow and I feel like I don't know any of the material :/ "
 		},
 		{
 			"postCategory": "panel-warning",
 			"postTitle": "Dream job!",
-			"postInfo": "I'm happy :)",
+			"postInfo": "I'm happy :) Finally scored an interview at Google and I just got calle...",
 			"fullPost": "I'm happy :) Finally scored an interview at Google and I just got called back for the next step!"
 		},
 		{
 			"postCategory": "panel-danger",
-			"postTitle": "Annoying people suck",
-			"postInfo": "I'm mad >:(",
-			"fullPost": "I'm mad >:( My classmates are so annoying! ugghhhhhhh"
+			"postTitle": "Struggling with code, this sucks",
+			"postInfo": "So these late nights have not been fun. I've been coding all day for th...",
+			"fullPost": "So these late nights have not been fun. I've been coding all day for the past few days and it's a bummer how It's almost 3:30 AM and I'm not even worried about not sleeping. I'm more worried about finishing this code. SOS here."
 		}
 	]
 }
