@@ -6,48 +6,67 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/about_and_help.css" rel="stylesheet">
+		<link href="/css/simple-sidebar.css" rel="stylesheet">
 		<link href="css/feelzNaviBar.css" rel="stylesheet">
 		<link href="css/FeelzApp.css" rel="stylesheet">
 
 	</head>
+
 	<body>
 
-	<!-- fixed position navibar on top of screen -->
-	{{>feelzNaviBar}}
+		<div id="wrapper">
+			<!-- fixed position navibar on top of screen -->
+			{{>feelzNaviBar}}
 
-	<div class="panel panel-info">
+			{{> sideBar}}
 
-		<div class="panel-heading">
-			<h1 class="panel-title">Help with the Feelz</h1>
+			<div id="page-content-wrapper" class="col-md-10"> 
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<!-- page content here -->
+
+							<div class="panel panel-info">
+
+								<div class="panel-heading">
+									<h1 class="panel-title">Help with the Feelz</h1>
+								</div>
+
+								<div class="panel-body">
+									<h3>User Log-In</h3></br>
+									<p>
+										<h4>Creating an Account</h4>
+										<p>Creating an account is super easy and fun here on the FeelzApp. Just click on "Account" from the drop-down menu then click on "Sign Up HERE!" on the Login In screen and you'll be on your way!</p>
+										<h4>How to Log In</h4>
+										<p>You can log in to you account by simply entering you user information into the Log In screen.</p>
+										<h4>How to Log Out</h4>
+										<p>You can log out of your account by clicking on the "Log Out" from the drop-down menu.</p>
+									</p>
+									<h3>How to post</h3>
+									<p>
+										You can post your Feelz by simply clicking on the "New Post" button on the top right corner of the main feed page and voila!</p>
+									<h3>I really liked a post I saw, how do I express this?</h3>
+									<p>
+										Feeling a post? Awesome! Go ahead and tap/click on the post and select "bump" from the top right corner. This will move the post to the top of the feed and give it Feel points!
+									</p>
+									</br>
+							 	 </div>
+							 
+							 </div>
+
+							<div class="footer">
+								<footer>
+									<a href="/">Back to Main Page</a>
+								</footer>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end page-content-wrapper -->
 		</div>
-
-		<div class="panel-body">
-			<h3>User Log-In</h3></br>
-			<p>
-				<h4>Creating an Account</h4>
-				<p>Creating an account is super easy and fun here on the FeelzApp. Just click on "Account" from the drop-down menu then click on "Sign Up HERE!" on the Login In screen and you'll be on your way!</p>
-				<h4>How to Log In</h4>
-				<p>You can log in to you account by simply entering you user information into the Log In screen.</p>
-				<h4>How to Log Out</h4>
-				<p>You can log out of your account by clicking on the "Log Out" from the drop-down menu.</p>
-			</p>
-			<h3>How to post</h3>
-			<p>
-				You can post your Feelz by simply clicking on the "New Post" button on the top right corner of the main feed page and voila!</p>
-			<h3>I really liked a post I saw, how do I express this?</h3>
-			<p>
-				Feeling a post? Awesome! Go ahead and tap/click on the post and select "bump" from the top right corner. This will move the post to the top of the feed and give it Feel points!
-			</p>
-			</br>
-	 	 </div>
-	 
-	 </div>
-
-	<div class="footer">
-		<footer>
-			<a href="/">Back to Main Page</a>
-		</footer>
-	</div>
+		<!-- end wrapper-->
 
 	</body>
 

@@ -5,48 +5,55 @@
 	<title>FeelzApp</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/FeelzApp.css" rel="stylesheet">
-	<link href="css/feelzNaviBar.css" rel="stylesheet">
-	<link href="css/accSettings.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/FeelzApp.css" rel="stylesheet">
+	<link href="/css/simple-sidebar.css" rel="stylesheet">
+	<link href="/css/feelzNaviBar.css" rel="stylesheet">
+	<link href="/css/accSettings.css" rel="stylesheet">
 
 
 <body>
 
-	<!-- fixed position navibar on top of screen -->
-	{{>feelzNaviBar}}
+	<div id="wrapper">
 
-	<div class="panel panel-info">
+		<!-- fixed position navibar on top of screen -->
+		{{>feelzNaviBar}}
 
-		<div class="panel-heading">
-			<h1 class="panel-title">Account Settings</h1>
+		{{>sideBar}}
+
+		<div id="page-content-wrapper" class="col-md-10"> 
+
+		<div class="panel panel-info">
+
+				<div class="panel-heading">
+					<h1 class="panel-title">Account Settings</h1>
+				</div>
+
+				<div class="panel-body">
+					<p>Userame: {{username}}</p>
+					<p>Email: {{email}}</p>
+
+					<p>Test Password Changes: {{password}}</p>
+					<a id="changePasswordButton" name="changePasswordButton"type="button">Change password</a>
+
+					<p>Facebook: </p>
+
+					<div class="passwordAlert alert alert-danger" role="alert">Alert!</div>
+					<!-- change password form -->
+					<form id="changePasswordForm" method="get" name="changePasswordForm" action="/changePassword" onsubmit="return checkForm(this);">
+						Old Password: <input id="oldPassword" type="text" name="oldPassword" placeholder="old password"><br>
+						New Password: <input id="newPassword" type="password" name="pwd1" placeholder="new password"><br>
+						Confirm New Password: <input id="pwd2" type="password" name="confirmNewPassword" placeholder="new password"><br>
+						<input type="submit" id="submitChanges" class="btn btn-default" value="Update"></input>
+					</form>
+			 	 </div>
+			</div>
+			
+			<a href="/">Back to Homepage</a>
+
 		</div>
-
-		<div class="panel-body">
-			<p>Userame: {{username}}</p>
-			<p>Email: {{email}}</p>
-
-			<p>Test Password Changes: {{password}}</p>
-			<a id="changePasswordButton" name="changePasswordButton"type="button">Change password</a>
-
-			<p>Facebook: </p>
-
-			<div class="passwordAlert alert alert-danger" role="alert">Alert!</div>
-			<!-- change password form -->
-			<form id="changePasswordForm" method="get" name="changePasswordForm" action="/changePassword" onsubmit="return checkForm(this);">
-				Old Password: <input id="oldPassword" type="text" name="oldPassword" placeholder="old password"><br>
-				New Password: <input id="newPassword" type="password" name="pwd1" placeholder="new password"><br>
-				Confirm New Password: <input id="pwd2" type="password" name="confirmNewPassword" placeholder="new password"><br>
-				<input type="submit" id="submitChanges" class="btn btn-default" value="Update"></input>
-			</form>
-
-	 	 </div>
-
 	</div>
-	
-	<a href="/">Back to Homepage</a>
-
 
 </body>
 
@@ -55,9 +62,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/hideNav.js"></script>
-	<script src="js/changePassword.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/hideNav.js"></script>
+	<script src="/js/changePassword.js"></script>
 
 
 </html>
