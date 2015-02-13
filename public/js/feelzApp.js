@@ -6,19 +6,11 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
-
-var wasToggled = false;
-
 function initializePage() {
-  var mq = window.matchMedia( "(min-width: 768px)" );
-
-  if (mq.matches) {
-    $("#wrapper").toggleClass("toggled");
-  } 
-
 	$("#postButtonToggle").click(postButtonToggle);
 	$(".postSnippet").click(popupPost);
   $("#expandPost").click(popupPost);
+
 
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
@@ -30,13 +22,14 @@ function initializePage() {
 
   $("#popup_container_panel").click(function(e) {
       if ( $("#popup_container_panel").has(e.target).length === 0 ) {
-        hidePopupPost();
+        $("#popup_container_panel").hide();
       }
   });
 
   $("#popup_container_form").click(function(e) {
       if ( $("#popup_container_form").has(e.target).length === 0 ) {
         postButtonToggle(null);
+        $("#popup_container_form").hide();
       }
   });
 }
@@ -46,17 +39,11 @@ function initializePage() {
 function postButtonToggle(e) {
   $('#postButtonToggle').text(function(i, text) {
   	  if (text === "Back") {
-          if (wasToggled) {
-            $("#wrapper").toggleClass("toggled");
-            wasToggled = false;
-          }
-
-          $("#popup_container_form").hide();
+          document.getElementById('popup_container_form').style.display = "none";
       } else {
-          if ($("#wrapper").hasClass("toggled")) wasToggled = true;
-          $("#wrapper").removeClass("toggled");
-
-          $("#popup_container_form").show();
+          $("#wrapper").removeClass("toggled")
+          hidePopupPost();
+          document.getElementById('popup_container_form').style.display = "block";
       }
       return text === "Back" ? "New Post" : "Back";
   });
@@ -73,19 +60,12 @@ function popupPost(e) {
   document.getElementById('fullPostTitle').innerHTML = title;
   document.getElementById('fullPostInfo').innerHTML = info;
 
-  if ($("#wrapper").hasClass("toggled")) wasToggled = true;
-  $("#wrapper").removeClass("toggled");
+  document.getElementById('wrapper').className = "";
 
   document.getElementById('popup_container_panel').style.display = "block";
 	
 }
 function hidePopupPost() {
-
-  if (wasToggled) {
-    $("#wrapper").toggleClass("toggled");
-    wasToggled = false;
-  }
-
   document.getElementById('popup_container_panel').style.display = "none";
 }
 
