@@ -51,7 +51,6 @@ function popupPost(e) {
   document.getElementById('fullPostInfo').innerHTML = info;
 
   console.log($(this).position().top);
-  document.getElementById('postFull').style.marginTop = ($(this).position().top - 5) + "px";
   document.getElementById('popup_container_panel').style.display = "block";
 	
 }
