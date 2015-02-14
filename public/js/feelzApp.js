@@ -18,7 +18,6 @@ function initializePage() {
 	$(".postSnippet").click(popupPost);
   $("#expandPost").click(popupPost);
 
-
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
     hidePopupPost();
@@ -53,6 +52,7 @@ function postButtonToggle(e) {
       } else {
           if ($("#wrapper").hasClass("toggled")) wasToggled = true;
           $("#wrapper").removeClass("toggled");
+          hidePopupPost();
           $("#popup_container_form").show();
       }
       return text === "Back" ? "New Post" : "Back";
@@ -65,10 +65,12 @@ function popupPost(e) {
   var cat = $(this).data("cat");
   var title = $(this).data("title");
   var info = $(this).data("full");
+  var bumpCount = $(this).data("bump");
 
   document.getElementById('fullPostCategory').className = cat;
   document.getElementById('fullPostTitle').innerHTML = title;
   document.getElementById('fullPostInfo').innerHTML = info;
+  document.getElementById('fullPostBumpCount').innerHTML = bumpCount;
 
   if ($("#wrapper").hasClass("toggled")) wasToggled = true;
   $("#wrapper").removeClass("toggled");  
@@ -106,11 +108,3 @@ function checkNewPostForm(form) {
 
   return true;
 }
-
-
-
-// add the following:
-
-// bump a post script
-
-

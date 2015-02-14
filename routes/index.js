@@ -70,7 +70,8 @@ exports.pushPost = function(req, res){
   var newPost = { "postCategory": newCategory,
                   "postTitle": postTitle,
                   "postInfo": snippet,
-                  "fullPost": postContent
+                  "fullPost": postContent,
+                  "bumpCount": "0"
                 };
 
   //add error handling here
