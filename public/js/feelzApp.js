@@ -12,7 +12,7 @@ $(document).ready(function() {
 function initializePage() {
   var mq = window.matchMedia( "(min-width: 768px)" );
 
-  if (mq.matches) $("#wrapper").toggleClass("toggled");
+  if (mq.matches) $("#wrapper").addClass("toggled");
 
 	$("#postButtonToggle").click(postButtonToggle);
 	$(".postSnippet").click(popupPost);
@@ -20,7 +20,7 @@ function initializePage() {
 
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
-    hidePopupPost();
+    $('#popup_container_panel').hide();
     if (document.getElementById('popup_container_form').style.display != "block") {
       $("#wrapper").toggleClass("toggled");
     }
@@ -37,25 +37,62 @@ function initializePage() {
         postButtonToggle(null);
       }
   });
+
+  $('#postSubmission').click(function(e) {
+    console.log('clicked');
+    var postCategory = $('#newPostForm #newPostCategory').val();
+    var postTitle = $('#newPostForm #newPostTitle').val();
+    var postInfo = "";
+    var fullPost = $('#newPostForm #newPostContent').val();
+    var bumpCount = "0";
+
+    if (fullPost.length > 70) {
+      var ellipsis = "...";
+      postInfo = fullPost.substring(0,71).concat(ellipsis);
+    } else {
+      postInfo = fullPost;
+    }
+
+    var json = {
+      'postCategory': postCategory,
+      'postTitle': postTitle,
+      'postInfo':  postInfo,
+      'fullPost': fullPost,
+      'bumpCount': bumpCount
+    };
+
+    console.log(json);
+    $.post('/post/new', json, function() {
+      window.location.href = '/'; // reload the page
+    });
+  });
+
 }
 
 //new post function
 //make newpost page into a popup form
 function postButtonToggle(e) {
   $('#postButtonToggle').text(function(i, text) {
-  	  if (text === "Back") {
+  	  if (text === "Cancel") {
           if (wasToggled) {
-            $("#wrapper").toggleClass("toggled");
+            $("#wrapper").addClass("toggled");
             wasToggled = false;
           }
-          $("#popup_container_form").hide();
+          if (! confirm('Are you sure you want to canel this post?') ) {
+            //do nothing
+            return "Cancel";
+          } else {
+              document.getElementById('newPostForm').reset();
+              $("#popup_container_form").hide();
+          }
+          
       } else {
           if ($("#wrapper").hasClass("toggled")) wasToggled = true;
           $("#wrapper").removeClass("toggled");
-          hidePopupPost();
+          $('#popup_container_panel').hide();
           $("#popup_container_form").show();
       }
-      return text === "Back" ? "New Post" : "Back";
+      return text === "Cancel" ? "New Post" : "Cancel";
   });
 }
 
@@ -80,10 +117,10 @@ function popupPost(e) {
 }
 function hidePopupPost() {
   if (wasToggled) {
-    $("#wrapper").toggleClass("toggled");
+    $("#wrapper").addClass("toggled");
     wasToggled = false;
   }
-  document.getElementById('popup_container_panel').style.display = "none";
+  $('#popup_container_panel').hide();
 }
 
 function checkNewPostForm(form) {
@@ -108,3 +145,9 @@ function checkNewPostForm(form) {
 
   return true;
 }
+
+
+
+
+
+

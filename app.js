@@ -6,7 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 
@@ -20,6 +21,13 @@ var signup = require('./routes/signup');
 var forgotPass = require('./routes/forgotPass');
 
 var app = express();
+
+// Connect to the Mongo database, whether locally or on Heroku
+// MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
+var local_database_name = 'feelzApp';
+var local_database_uri  = 'mongodb://localhost/' + local_database_name
+var database_uri = process.env.MONGOLAB_URI || local_database_uri
+mongoose.connect(database_uri);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -43,7 +51,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.viewHome);
-app.get('/newPostRe', index.pushPost);
+app.post('/post/new', index.pushPost);
 app.get('/category/:id', index.viewCategory);
 
 app.get('/Account_Settings', accSettings.viewAccSettings);

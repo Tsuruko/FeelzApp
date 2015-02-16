@@ -1,58 +1,23 @@
 // Get all of our post data
 var data = require('../postData.json');
+var models = require('../models');
 
 exports.viewHome = function(req, res){
-	//console.log(data);
-	res.render('index', data);
+  models.Post
+        .find()
+        //.sort('bumpCount')
+        .exec(renderPosts);
+
+  function renderPosts(err, posts) {
+    res.render('index', {'posts': posts});
+  }
+
 };
 
 exports.viewCategory = function(req, res){
-
-    cat = req.params.id;
-
-	var newCategory = "";
-	if (cat == 1) {
-	newCategory = "panel-default";
-	} else if (cat == 2) {
-	newCategory = "panel-primary";
-	} else if (cat == 3) {
-	newCategory = "panel-success";
-	} else if (cat == 4) {
-	newCategory = "panel-custom";
-	} else if (cat == 5) {
-	newCategory = "panel-warning";
-	} else if (cat == 6) {
-	newCategory = "panel-danger";
-	}
-
-	var posts = data["posts"];
-	var findPosts = [];
-	for (i = 0; i < posts.length; i++) {
-		if ( posts[i]["postCategory"] == newCategory ) {
-			findPosts.push(posts[i]);
-		}
-	}
-
-	var categorized = { "posts":  findPosts } ;
-
-    res.render('index', categorized);
-
-};
-
-
-exports.pushPost = function(req, res){
-
-  var cat = req.query.newPostCategory;
-  var postTitle = req.query.newPostTitle;
-  var postContent = req.query.newPostContent;
-  var snippet = postContent;
-  
-  if (postContent.length > 70) {
-    var ellipsis = "...";
-    snippet = postContent.substring(0,71).concat(ellipsis);
-  }
-
+  var cat = req.params.id;
   var newCategory = "";
+
   if (cat == 1) {
     newCategory = "panel-default";
   } else if (cat == 2) {
@@ -67,19 +32,50 @@ exports.pushPost = function(req, res){
     newCategory = "panel-danger";
   }
 
-  var newPost = { "postCategory": newCategory,
-                  "postTitle": postTitle,
-                  "postInfo": snippet,
-                  "fullPost": postContent,
-                  "bumpCount": "0"
-                };
+  models.Post
+        .find({"postCategory": newCategory})
+        //.sort('bumpCount')
+        .exec(renderCategory);
 
-  //add error handling here
+  function renderCategory(err, posts) {
+    res.render('index', {'posts': posts});
+  }
 
-  data["posts"].unshift(newPost);
+};
 
-    console.log(data);
+exports.pushPost = function(req, res){
+  var form_data = req.body;
+  var cat = form_data.postCategory;
+  var newCategory = "";
 
-    res.render('index', data);
+  if (cat == 1) {
+    newCategory = "panel-default";
+  } else if (cat == 2) {
+    newCategory = "panel-primary";
+  } else if (cat == 3) {
+    newCategory = "panel-success";
+  } else if (cat == 4) {
+    newCategory = "panel-custom";
+  } else if (cat == 5) {
+    newCategory = "panel-warning";
+  } else if (cat == 6) {
+    newCategory = "panel-danger";
+  }
 
+  var newPost = new models.Post( {
+    "postCategory": newCategory,
+    "postTitle": form_data.postTitle,
+    "postInfo": form_data.postInfo,
+    "fullPost": form_data.fullPost,
+    "bumpCount": form_data.bumpCount
+  });
+
+  newPost.save(afterPush);
+  function afterPush(err) {
+    if (err) {
+      console.log(err);
+      res.send(500);
+    }
+    res.send("ok");
+  }
 };

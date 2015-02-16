@@ -5,16 +5,17 @@
 	<div id="popup_container_form">
 		<div id="newpost_form">
 			<!-- action = "#" -->
-			<form class="newPostForm" id="form" method="get" name="newPostForm" action="/newPostRe" onsubmit="return checkNewPostForm(this);">
+			<!-- method="get" action="/newPostRe" -->
+			<form class="newPostForm" id="newPostForm" name="newPostForm" onsubmit="return checkNewPostForm(this);">
 				<!-- add post title -->
 				<input id="newPostTitle" name="newPostTitle" placeholder="Post Title" type="text"><br/>
 				<!-- add text box -->
 				<textarea id="newPostContent" name="newPostContent" placeholder="Enter text here"></textarea>
 				<div id="newPostButtons" class="row">
 					<!-- this feature takes up 6 column units -->
-					<div class="col-md-1 pull-left">
+					<div class="col-sm-2 pull-left">
 							<!-- Single button dropdown menu for choosing category -->
-							<select type="button" class="form-control" name="newPostCategory">
+							<select type="button" class="form-control" id="newPostCategory">
 								<option>Category</option>
 							    <option value="1">Grey</option>
 							    <option value="2">Blue</option>
