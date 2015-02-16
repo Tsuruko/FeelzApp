@@ -5,7 +5,7 @@ var models = require('../models');
 exports.viewHome = function(req, res){
   models.Post
         .find()
-        //.sort('bumpCount')
+        .sort('-bumpCount')
         .exec(renderPosts);
 
   function renderPosts(err, posts) {
@@ -34,7 +34,7 @@ exports.viewCategory = function(req, res){
 
   models.Post
         .find({"postCategory": newCategory})
-        //.sort('bumpCount')
+        .sort('bumpCount')
         .exec(renderCategory);
 
   function renderCategory(err, posts) {
@@ -78,4 +78,29 @@ exports.pushPost = function(req, res){
     }
     res.send("ok");
   }
+
+};
+
+exports.bumpPost = function(req, res) {
+  var data = req.body;
+
+
+  models.Post
+        .update( {"_id": data.id}, { $inc: {"bumpCount": 1 } } )
+        .exec(afterBump);
+/*
+  models.Post
+        .find()
+        .update( {"bumpCount" : data.bumpCount})
+        .exec(afterBump);
+*/
+
+  function afterBump(err, post) {
+    if (err) {
+      console.log(err);
+      res.send(500);
+    }
+      res.send("ok");
+  }
+
 };
