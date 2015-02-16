@@ -17,25 +17,6 @@ exports.submitLogin = function(req, res){
 	var entered_username = req.query.username;
 	var entered_password = req.query.password;
 	
-	var count = 0;
-
-	while( count < data["users"].length ) {
-		if( entered_username == data["users"][count]["username"])
-			break;
-
-		count++;
-	}
-
-	if( count == data["users"].length) {
-		console.log("error, wrong username/password")
-		return;
-	}
-
-	if( entered_password != data["users"][count]["password"] ) {
-		console.log("error, wrong username/password");
-		return;
-	}
-	
 	var newLogin = new models.LoggedIn ( {
 		"username": entered_username,
 		"password": entered_password
