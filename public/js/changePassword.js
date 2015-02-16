@@ -7,28 +7,34 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	console.log("test");
-	hidePasswordForm();
-	$("#changePasswordButton").click(changePass);
-  $(".alert").hide();
+  //$('#changePasswordForm').hide();
+	//$("#changePasswordButton").click(togglePassButton);
+  $("#submitChanges").click(changePassword);
 }
 
-function hidePasswordForm() {
-  document.getElementById('changePasswordForm').style.display = "none";
+function changePassword(e) {
+
+  /*  ie:
+    $.post('/post/bumpPost', json, function test(result) {
+      //console.log(result);
+      window.location.href = '/'; // reload the page
+    });
+  */
 }
 
-function changePass(e) {
+function togglePassButton(e) {
 
   $(this).text(function(i, text) {
   	  if (text === "Back") {
-          document.getElementById('changePasswordForm').style.display = "none";
+          $('#changePasswordForm').hide();
       } else {
-          document.getElementById('changePasswordForm').style.display = "block";
+        console.log("display");
+          $('#changePasswordForm').show();
       }
       return text === "Change password" ? "Back" : "Change password";
   });
 
-$("#changePassword").hide();
+  //$("#changePassword").hide();
 
 }
 

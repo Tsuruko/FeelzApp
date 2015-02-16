@@ -1,12 +1,29 @@
 // Get all of our user data
 var data = require('../userData.json');
+var models = require('../models');
 
 exports.viewAccSettings = function(req, res) {
 
 	//find logged in as here
+	models.LoggedIn.find().exec(userInfo);
 
-	var loggedIn = data["users"][0];
-	res.render('accSettings', loggedIn);
+	function userInfo(err, info) {
+		if (err) {
+			console.log(err);
+			res.send(500);
+		}
+
+		console.log(info);
+
+		var loginInfo = {"username": info[0]["username"],
+						 "password": info[0]["password"]
+						}
+
+		console.log(loginInfo);
+
+		res.render('accSettings', loginInfo);
+	}
+	
 };
 
 
@@ -16,21 +33,20 @@ exports.changePass = function(req, res) {
 	var confirm = req.query.pwd2;
 
 	//find logged in as here
-	var loggedIn = data["users"][0];
+	models.LoggedIn.update( {} , {"password": newP })
+						.exec(afterUpdate);
 
-	if (old != loggedIn["password"]) {
-		console.log("error, password doesn't match old password");
-		//return;
+	function afterUpdate(err, info) {
+		if (err) {
+			console.log(err);
+			res.send(500);
+		}
+
+		var loginInfo = { "username": info[0]["username"],
+						  "password": info[0]["password"]
+		}
+
+		console.log(loginInfo);
+		res.render('accSettings', loginInfo);
 	}
-
-	if (confirm != newP) {
-		console.log("error, passwords don't match");
-		//return;
-	}
-
-	loggedIn["password"] = newP;
-
-	console.log("made it");
-
-	res.render('accSettings', loggedIn);
 }

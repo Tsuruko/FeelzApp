@@ -3,15 +3,33 @@ var data = require('../postData.json');
 var models = require('../models');
 
 exports.viewHome = function(req, res){
-  models.Post
+  res.render('login');
+/*
+  models.LoggedIn
         .find()
-        .sort('-bumpCount')
-        .exec(renderPosts);
+        .exec(checkLogin);
 
-  function renderPosts(err, posts) {
-    res.render('index', {'posts': posts});
+  function checkLogin(err, login) {
+      console.log(login);
+      if (! login.length === 0) {
+          models.Post
+                .find()
+                .sort('-bumpCount')
+                .exec(renderPosts);
+
+          function renderPosts(err, posts) {
+            console.log(login);
+            var loginPosts = {"login": login,
+                              "posts": posts
+                             };
+
+            res.render('index', loginPosts);
+          }
+
+      } else res.render('login');
   }
 
+*/
 };
 
 exports.viewCategory = function(req, res){
@@ -76,7 +94,7 @@ exports.pushPost = function(req, res){
       console.log(err);
       res.send(500);
     }
-    res.send("ok");
+    res.send("newpost ok");
   }
 
 };
