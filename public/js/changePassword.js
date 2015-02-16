@@ -1,18 +1,8 @@
-// Call this function when the page loads (the "ready" event)
-$(document).ready(function() {
-    initializePage();
-});
 
-/*
- * Function that is called when the document is ready.
- */
-function initializePage() {
-  //$('#changePasswordForm').hide();
-	//$("#changePasswordButton").click(togglePassButton);
-  $("#submitChanges").click(changePassword);
-}
+//$("#changePasswordButton").click(togglePassButton);
 
-function changePassword(e) {
+
+$("#submitChanges").click(function changePassword(e) {
 
   /*  ie:
     $.post('/post/bumpPost', json, function test(result) {
@@ -20,7 +10,7 @@ function changePassword(e) {
       window.location.href = '/'; // reload the page
     });
   */
-}
+});
 
 function togglePassButton(e) {
 

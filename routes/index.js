@@ -3,15 +3,15 @@ var data = require('../postData.json');
 var models = require('../models');
 
 exports.viewHome = function(req, res){
-  res.render('login');
-/*
+
   models.LoggedIn
         .find()
         .exec(checkLogin);
 
   function checkLogin(err, login) {
-      console.log(login);
-      if (! login.length === 0) {
+      console.log(login.length);
+      if ( login.length != 0) {
+        console.log("rendering home");
           models.Post
                 .find()
                 .sort('-bumpCount')
@@ -29,7 +29,6 @@ exports.viewHome = function(req, res){
       } else res.render('login');
   }
 
-*/
 };
 
 exports.viewCategory = function(req, res){

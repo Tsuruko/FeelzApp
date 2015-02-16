@@ -19,6 +19,7 @@ var help = require('./routes/help');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var forgotPass = require('./routes/forgotPass');
+var logout = require('./routes/logout');
 
 var app = express();
 
@@ -66,6 +67,7 @@ app.get('/LoginFormSubmit', login.submitLogin);
 app.get('/Signup', signup.viewSignup);
 app.get('/SignupFormSubmit', signup.submitSignup);
 app.get('/Forgot_Password', forgotPass.viewForgotPass);
+app.get('/Logout', logout.submitLogout);
 
 
 http.createServer(app).listen(app.get('port'), function(){

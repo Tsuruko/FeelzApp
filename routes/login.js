@@ -4,6 +4,7 @@ var postData = require('../postData.json');
 var models = require('../models');
 
 exports.viewLogin = function(req, res){
+	models.LoggedIn.find().remove().exec();
 	res.render('login');
 };
 
