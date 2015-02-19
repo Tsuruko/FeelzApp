@@ -18,7 +18,6 @@ exports.viewHome = function(req, res){
                 .exec(renderPosts);
 
           function renderPosts(err, posts) {
-            console.log(posts)
             for (i = 0; i < posts.length; i++) {
               var date = new Date(posts[i]["localDate"]);
               
@@ -36,6 +35,17 @@ exports.viewHome = function(req, res){
   }
 
 };
+
+exports.sortByBump = function(req, res) {
+  models.Post
+        .find()
+        .sort('-bumpCount')
+        .exec(renderPosts);
+
+  function renderPosts(err, posts) {
+    res.render('index', {'posts':posts});
+  }
+}
 
 exports.viewCategory = function(req, res){
   var cat = req.params.id;
@@ -57,7 +67,7 @@ exports.viewCategory = function(req, res){
 
   models.Post
         .find({"postCategory": newCategory})
-        .sort('bumpCount')
+        .sort('-bumpCount')
         .exec(renderCategory);
 
   function renderCategory(err, posts) {
@@ -86,6 +96,7 @@ exports.pushPost = function(req, res){
   }
 
   var d = new Date();
+  console.log(d);
   var newPost = new models.Post( {
     "postCategory": newCategory,
     "postTitle": form_data.postTitle,
@@ -96,6 +107,7 @@ exports.pushPost = function(req, res){
     "localDate": d.toLocaleString()
   });
 
+  console.log(d.toLocaleString());
   newPost.save(afterPush);
   function afterPush(err) {
     if (err) {

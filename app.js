@@ -54,6 +54,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.viewHome);
 app.post('/post/new', index.pushPost);
 app.post('/post/bumpPost', index.bumpPost);
+app.get('/bumpView', index.sortByBump)
 app.get('/category/:id', index.viewCategory);
 
 app.get('/Account_Settings', accSettings.viewAccSettings);
