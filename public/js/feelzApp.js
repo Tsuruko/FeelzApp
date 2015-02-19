@@ -52,6 +52,7 @@ function popupPost(e) {
   var title = $(this).data("title");
   var info = $(this).data("full");
   var bumpCount = $(this).data("bump");
+  var date = $(this).data("date");
 
   var id = $(this).data("monid");
   $('#postFull').data("id", id);
@@ -60,6 +61,7 @@ function popupPost(e) {
   document.getElementById('fullPostTitle').innerHTML = title;
   document.getElementById('fullPostInfo').innerHTML = info;
   document.getElementById('fullPostBumpCount').innerHTML = bumpCount;
+  document.getElementById('fullPostDate').innerHTML = date;
 
   if ($("#wrapper").hasClass("toggled")) wasToggled = true;
   $("#wrapper").removeClass("toggled");  

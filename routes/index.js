@@ -14,11 +14,17 @@ exports.viewHome = function(req, res){
         console.log("rendering home");
           models.Post
                 .find()
-                .sort('-bumpCount')
+                .sort('-date')
                 .exec(renderPosts);
 
           function renderPosts(err, posts) {
-            console.log(login);
+            console.log(posts)
+            for (i = 0; i < posts.length; i++) {
+              var date = new Date(posts[i]["localDate"]);
+              
+              posts["localDate"] = date.toLocaleString();
+             
+            }
             var loginPosts = {"login": login,
                               "posts": posts
                              };
@@ -79,12 +85,15 @@ exports.pushPost = function(req, res){
     newCategory = "panel-danger";
   }
 
+  var d = new Date();
   var newPost = new models.Post( {
     "postCategory": newCategory,
     "postTitle": form_data.postTitle,
     "postInfo": form_data.postInfo,
     "fullPost": form_data.fullPost,
-    "bumpCount": form_data.bumpCount
+    "bumpCount": form_data.bumpCount,
+    "date": d,
+    "localDate": d.toLocaleString()
   });
 
   newPost.save(afterPush);

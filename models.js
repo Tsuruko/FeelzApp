@@ -8,7 +8,9 @@ var PostSchema = new Mongoose.Schema({
 	"postTitle": String,
 	"postInfo": String,
 	"fullPost": String,
-	"bumpCount": Number
+	"bumpCount": Number,
+	"date": Date,
+	"localDate": String
 });
 
 exports.Post = Mongoose.model('Post', PostSchema);
