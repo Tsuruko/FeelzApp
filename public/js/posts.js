@@ -77,7 +77,7 @@ $("#postButtonToggle").click(function postButtonToggle(e) {
   $('#postButtonToggle').text(function(i, text) {
     console.log(text);
       if (text === "Cancel") {
-          if (! confirm('Are you sure you want to canel this post?') ) {
+          if (! confirm('Are you sure you want to cancel this post?') ) {
             //do nothing
             return "Cancel";
           } else {
