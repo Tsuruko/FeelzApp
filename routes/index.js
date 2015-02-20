@@ -107,26 +107,10 @@ exports.viewCategory = function(req, res){
 
 exports.pushPost = function(req, res){
   var form_data = req.body;
-  var cat = form_data.postCategory;
-  var newCategory = "";
-
-  if (cat == 1) {
-    newCategory = "panel-default";
-  } else if (cat == 2) {
-    newCategory = "panel-primary";
-  } else if (cat == 3) {
-    newCategory = "panel-success";
-  } else if (cat == 4) {
-    newCategory = "panel-custom";
-  } else if (cat == 5) {
-    newCategory = "panel-warning";
-  } else if (cat == 6) {
-    newCategory = "panel-danger";
-  }
 
   var d = new Date();
   var newPost = new models.Post( {
-    "postCategory": newCategory,
+    "postCategory": form_data.postCategory,
     "postTitle": form_data.postTitle,
     "postInfo": form_data.postInfo,
     "fullPost": form_data.fullPost,
@@ -149,16 +133,9 @@ exports.pushPost = function(req, res){
 exports.bumpPost = function(req, res) {
   var data = req.body;
 
-
   models.Post
         .update( {"_id": data.id}, { $inc: {"bumpCount": 1 } } )
         .exec(afterBump);
-/*
-  models.Post
-        .find()
-        .update( {"bumpCount" : data.bumpCount})
-        .exec(afterBump);
-*/
 
   function afterBump(err, post) {
     if (err) {
