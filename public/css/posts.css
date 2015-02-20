@@ -93,4 +93,5 @@ textarea {
 	font-size:16px;
 	/*font-family:raleway; */
 	margin-bottom:30px;
+	min-height: 300px;
 }
