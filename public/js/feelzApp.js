@@ -7,14 +7,17 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 
- var wasToggled = false;
 
 function initializePage() {
-  $("#menu-toggle").click(function(e) {
-  	console.log("clicked");
-    $("#sideBarWrapper").toggleClass("toggled");
-  });
+	var mq = window.matchMedia( "(min-width: 768px)" );
+	if (mq.matches) $("#wrapper").toggleClass("toggled");
 }
+
+//toggle menu
+$("#menu-toggle").click(function(e) {
+	e.preventDefault();
+	$("#wrapper").toggleClass("toggled");
+});
 
 //show signup form and hide login
 $('#logoutButton').click( function(e) {
