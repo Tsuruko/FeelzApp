@@ -1,5 +1,4 @@
-// Get all of our post data
-var data = require('../postData.json');
+// Get all of our database models
 var models = require('../models');
 var moment = require('moment');
 
@@ -32,7 +31,7 @@ exports.viewHome = function(req, res){
 exports.sortByDateBump = function(req, res) {
   models.Post
         .find()
-        .sort({'dateDay': 1, 'bumpCount':-1})
+        .sort({'dateDay': -1, 'bumpCount':-1})
         .exec(renderPosts);
 
   function renderPosts(err, posts) {
@@ -110,8 +109,8 @@ exports.viewCategory = function(req, res){
 
 exports.pushPost = function(req, res){
   var form_data = req.body;
+  var newDate = moment(new Date()).utcOffset("-08:00");
 
-  var newDate = moment(new Date()).utcOffset("-08:00")
   var newPost = new models.Post( {
     "postCategory": form_data.postCategory,
     "postTitle": form_data.postTitle,
@@ -132,7 +131,6 @@ exports.pushPost = function(req, res){
     }
     res.send("newpost ok");
   }
-
 };
 
 exports.bumpPost = function(req, res) {

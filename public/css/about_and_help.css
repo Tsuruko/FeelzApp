@@ -1,39 +1,39 @@
-body {
-	padding-top: 50px; 
-	background-color: #B8DBFF;
-	}
-.container{
+/* css styling for about and help pages
+ */
+
+.container {
 	background-color: #FFFFFF;
 	opacity: .95;
 	background-position:center;
-	}
+}
 	
-.page_title{
+.page_title {
 	background-position: center;
-	}
-.footer{
+}
+.footer {
 	text-align: center;
-	}
-.help_images{
+}
+.help_images {
 	max-width: 100%;
 	border: 2px solid #021a40;
 	
-	}
+}
+
 /*Accordion*/
-.accordion, .accordion *{
+.accordion, .accordion * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
-	}
-.accordion{
+}
+.accordion {
 	text-align: left;
 	overflow:hidden;
 	box-shadow:0px 1px 3px rgba(0,0,0,0.25);
 	border-radius:3px;
-	}
-/*Accordion Section Titles*/
+}
 
-.accordion-section-title{
+/*Accordion Section Titles*/
+.accordion-section-title {
 	width: 100%;
 	padding:15px;
 	display:inline-block;
@@ -42,20 +42,17 @@ body {
 	/* Type */
 	font-size:1.200em;
 	text-shadow:0px 1px 0px;
-	}
-
-.accordion-section-title.active, .accordion-section-title.hover{
+}
+.accordion-section-title.active, .accordion-section-title.hover {
 	background:#BDBDBD;
 	text-decoration:none;
-	}
-
-.accordion-selection:last-child .accordion-section-title{
+}
+.accordion-selection:last-child .accordion-section-title {
 	border-bottom:none;
-	}
+}
 
 /*Selection Content*/
-
-.accordion-section-content{
+.accordion-section-content {
 	padding:15px;
 	display:none;
-	}
+}
