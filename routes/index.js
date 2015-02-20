@@ -139,7 +139,7 @@ exports.pushPost = function(req, res){
     "fullPost": form_data.fullPost,
     "bumpCount": form_data.bumpCount,
     "date": d,
-    "localDate": d.toLocaleDateString() + " " + d.toLocaleTimeString()
+    "localDate": d.toLocaleString()
   });
 
   newPost.save(afterPush);
