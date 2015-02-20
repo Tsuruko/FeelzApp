@@ -54,8 +54,11 @@ if ('development' == app.get('env')) {
 app.get('/', index.viewHome);
 app.post('/post/new', index.pushPost);
 app.post('/post/bumpPost', index.bumpPost);
-app.get('/bumpView', index.sortByBump)
 app.get('/category/:id', index.viewCategory);
+
+app.get('/sort/date', index.viewHome);
+app.get('/sort/date/bump', index.sortByDateBump);
+app.get('/sort/bump', index.sortByBump);
 
 app.get('/Account_Settings', accSettings.viewAccSettings);
 app.get('/changePassword', accSettings.changePass);

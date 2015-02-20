@@ -18,7 +18,7 @@ exports.viewHome = function(req, res){
           function renderPosts(err, posts) {
             for (i = 0; i < posts.length; i++) {
               var date = new Date(posts[i]["localDate"]);
-              posts["localDate"] = date.toLocaleString();
+              posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
              
             }
 
@@ -34,6 +34,31 @@ exports.viewHome = function(req, res){
 
 };
 
+exports.sortByDateBump = function(req, res) {
+  models.Post
+        .find()
+        .sort({'date':-1, 'bumpCount':-1})
+        .exec(renderPosts);
+
+  function renderPosts(err, posts) {
+      models.LoggedIn
+        .find()
+        .exec(checkLogin);
+
+      function checkLogin(err, login) {
+        for (i = 0; i < posts.length; i++) {
+          var date = new Date(posts[i]["localDate"]);
+          posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+         
+        }
+        var loginPosts = {"username": login[0]["username"],
+                          "posts": posts
+                         };
+        res.render('index', loginPosts);
+      }
+  }
+}
+
 exports.sortByBump = function(req, res) {
   models.Post
         .find()
@@ -48,16 +73,14 @@ exports.sortByBump = function(req, res) {
       function checkLogin(err, login) {
         for (i = 0; i < posts.length; i++) {
           var date = new Date(posts[i]["localDate"]);
-          posts["localDate"] = date.toLocaleString();
+          posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
          
         }
         var loginPosts = {"username": login[0]["username"],
                           "posts": posts
                          };
-
         res.render('index', loginPosts);
       }
-
   }
 }
 
@@ -92,7 +115,7 @@ exports.viewCategory = function(req, res){
       function checkLogin(err, login) {
         for (i = 0; i < posts.length; i++) {
           var date = new Date(posts[i]["localDate"]);
-          posts["localDate"] = date.toLocaleString();
+          posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
          
         }
         var loginPosts = {"username": login[0]["username"],
@@ -116,7 +139,7 @@ exports.pushPost = function(req, res){
     "fullPost": form_data.fullPost,
     "bumpCount": form_data.bumpCount,
     "date": d,
-    "localDate": d.toLocaleString()
+    "localDate": d.toLocaleDateString() + " " + d.toLocaleTimeString()
   });
 
   newPost.save(afterPush);
