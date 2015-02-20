@@ -14,9 +14,7 @@ function initializePage() {
 	var mq = window.matchMedia( "(min-width: 768px)" );
 
 	if (mq.matches) $("#wrapper").toggleClass("toggled");
-
-	$("#postButtonToggle").css('visibility', 'hidden');
-
+	
 	$("#menu-toggle").click(function(e) {
 		$("#wrapper").toggleClass("toggled");
 	});
