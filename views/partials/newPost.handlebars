@@ -6,14 +6,14 @@
 		<div id="newpost_form">
 			<form class="newPostForm" id="newPostForm" name="newPostForm" onsubmit="return submitNewPost(this)">
 				<!-- add post title -->
-				<input id="newPostTitle" name="newPostTitle" placeholder="Post Title" type="text" required><br/>
+				<input id="newPostTitle" name="newPostTitle" placeholder="Post Title" type="text" required autofocus><br/>
 				<!-- add text box -->
-				<textarea id="newPostContent" name="newPostContent" placeholder="Enter text here" required></textarea>
+				<textarea id="newPostContent" name="newPostContent" placeholder="Enter text here" required autofocus></textarea>
 				<div id="newPostButtons" class="row">
 					<!-- this feature takes up 6 column units -->
 					<div class="col-sm-2 pull-left">
 							<!-- Single button dropdown menu for choosing category -->
-							<select type="button" class="form-control" id="newPostCategory" required>
+							<select type="button" class="form-control" id="newPostCategory" required autofocus>
 								<option value="">Category</option>
 							    <option value="panel-default">Chill</option>
 							    <option value="panel-primary">Sad</option>

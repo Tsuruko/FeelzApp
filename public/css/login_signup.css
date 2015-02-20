@@ -1,0 +1,35 @@
+/* login page css
+ */
+
+#loginbox {
+	margin-top: 20%;
+}
+
+#forgotPassText {
+	float: right; 
+	font-size: 80%; 
+	position: relative; 
+	top:-10px;
+}
+
+.panel-body {
+	padding-top: 20px;
+}
+
+#login-alert {
+	display: none;
+}
+
+.inputStyle {
+	margin-bottom: 15px;
+}
+
+#accountStat {
+	border-top: 1px solid#888; 
+	padding-top: 15px; 
+	font-size: 85%;
+}
+
+#buttonFormGroup {
+	margin-top: 10px;
+}
