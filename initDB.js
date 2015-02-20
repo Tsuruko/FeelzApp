@@ -55,13 +55,13 @@ function onceClear(err) {
                 "dateDay": newDate.format("YYYYMMDD")
             };
                 
-    var post = new models.Post(json);
+    var proj = new models.Post(json);
 
-    post.save(function(err, post) {
+    proj.save(function(err, proj) {
       if(err) console.log(err);
 
       to_save_count--;
-      //console.log(post);
+      //console.log(proj);
       console.log(to_save_count + ' left to save');
       if(to_save_count <= 0) {
         console.log('DONE');

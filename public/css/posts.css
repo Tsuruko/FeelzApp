@@ -22,6 +22,14 @@
  	border-color: #E7C4F3;
 }
 
+.panel-info {
+	margin-top: 15px;
+	margin-left:auto;
+	margin-right: auto;
+	width: 80%;
+	height: 30%;
+}
+
 .panel-footer {
   text-align: right;
 }

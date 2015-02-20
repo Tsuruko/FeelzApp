@@ -143,7 +143,7 @@ function bump(e) {
     var json = { "id": $('#postFull').data("id"),
                  "bumpCount": bumpCount
                 };
-    $.post('/post/bumpPost', json, function (result) {
+    $.post('/post/bumpPost', json, function test(result) {
       //console.log(result);
       window.location.href = '/'; // reload the page
     });
