@@ -18,52 +18,51 @@
     <body>
         <!-- fixed position navibar on top of screen -->
         {{> feelzTitleBar}}
+  
+        <div id="boxContainer" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                <div class="panel-heading">
+                    <div class="panel-title">Sign Up!</div>
+                </div>   
 
-        <div class="container">    
-            <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-                <div class="panel panel-info" >
-                    <div class="panel-heading">
-                        <div class="panel-title">Sign Up!</div>
-                    </div>   
-
-                    <div class="panel-body" >
-                        <!-- method="post"  -->
-                        <form action="/SignupFormSubmit" class="form" role="form">
-                            <div class="row">
-                                <div class="col-xs-6 col-md-6">
-                                    <input class="form-control" name="firstname" placeholder="First Name" type="text" autofocus required/>
-                                </div>
-                                <div class="col-xs-6 col-md-6">
-                                    <input class="form-control" name="lastname" placeholder="Last Name" type="text" />
-                                </div>
+                <div class="panel-body" >
+                    <!-- onsubmit="return submitSignupForm(this)"-->
+                    <form class="form" role="form"  action="/SignupFormSubmit">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <input class="form-control" name="firstname" placeholder="First Name" type="text" autofocus/>
                             </div>
-                            <input class="form-control" name="youremail" placeholder="Your Email" type="email" required/>
-                            <input class="form-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
-                            <input class="form-control" name="password" placeholder="New Password" type="password" required/>
-                            <label for="">
-                                Birth Date</label>
-                            <div class="row">
-                                <div class="col-xs-4 col-md-4">
-                                    <select class="form-control">
-                                        <option value="Month">Month</option>
-                                    </select>
-                                </div>
-                                <div class="col-xs-4 col-md-4">
-                                    <select class="form-control">
-                                        <option value="Day">Day</option>
-                                    </select>
-                                </div>
-                                <div class="col-xs-4 col-md-4">
-                                    <select class="form-control">
-                                        <option value="Year">Year</option>
-                                    </select>
-                                </div>
+                            <div class="col-xs-6 col-md-6">
+                                <input class="form-control" name="lastname" placeholder="Last Name" type="text" />
                             </div>
-                            <br />
+                        </div>
+                        <input class="form-control" name="username" placeholder="Username" type="text" autofocus required/>
+                        <input class="form-control" name="email" placeholder="Your Email" type="email" required/>
+                        <input class="form-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
+                        <input class="form-control" name="password" placeholder="New Password" type="password" required/>
+                        <label for="">
+                            Birth Date</label>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <select class="form-control">
+                                    <option value="Month">Month</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-4 col-md-4">
+                                <select class="form-control">
+                                    <option value="Day">Day</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-4 col-md-4">
+                                <select class="form-control">
+                                    <option value="Year">Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
 
-                            <input type="submit" id="btn-signup" class="btn btn-lg btn-primary btn-block" value="Sign up"></input>
-                        </form>
-                    </div>
+                        <input type="submit" id="btn-signup" class="btn btn-lg btn-primary btn-block" value="Sign up"></input>
+                    </form>
                 </div>
             </div>
         </div>
@@ -74,15 +73,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
     <!-- Login JavaScript -->
-    <script src="js/login.js"></script>
+    <script src="js/login_signup.js"></script>
 
 </html>

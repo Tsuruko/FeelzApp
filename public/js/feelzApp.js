@@ -11,7 +11,8 @@ $(document).ready(function() {
 
 function initializePage() {
   $("#menu-toggle").click(function(e) {
-    $("#wrapper").toggleClass("toggled");
+  	console.log("clicked");
+    $("#sideBarWrapper").toggleClass("toggled");
   });
 }
 

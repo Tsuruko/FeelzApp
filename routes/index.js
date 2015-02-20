@@ -1,5 +1,4 @@
-// Get all of our post data
-var data = require('../postData.json');
+// Get all of our database models
 var models = require('../models');
 var moment = require('moment');
 

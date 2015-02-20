@@ -14,3 +14,11 @@ body {
     background-color:#B8DBFF;
     background-origin: border-box;	
 }
+
+.panel-info {
+	margin-top: 15px;
+	margin-left:auto;
+	margin-right: auto;
+	width: 80%;
+	height: 30%;
+}
