@@ -1,6 +1,19 @@
-/* css styling for main app homepage
+/* css styling for main app homepage and navigation bar
  */
 
+
+ /* formatting for the navigation bar
+  *
+  * padding for space for fixed to top
+  * fix margins for aligning right
+  */
+body { 
+	padding-top: 50px; 
+	text-align: center;
+    text-shadow: above;
+    background-color:#B8DBFF;
+    background-origin: border-box;	
+}
  /* post classes */
 .panel-title {
     text-align: center;
