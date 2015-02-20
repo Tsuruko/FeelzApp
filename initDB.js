@@ -13,6 +13,7 @@
 
 var mongoose = require('mongoose');
 var models   = require('./models');
+var moment = require('moment');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
@@ -41,7 +42,18 @@ function onceClear(err) {
   // Note that we don't care what order these saves are happening in...
   var to_save_count = postData.length;
   for(var i=0; i<postData.length; i++) {
-    var json = postData[i];
+
+    var newDate = moment(new Date()).utcOffset("-08:00");
+
+    var json = {  "postCategory": postData[i]["postCategory"],
+                  "postTitle": postData[i]["postTitle"],
+                  "postInfo": postData[i]["postInfo"],
+                  "fullPost": postData[i]["fullPost"],
+                  "bumpCount": postData[i]["bumpCount"],
+                  "date:": newDate.toDate(),
+                  "localDate:": newDate.format("ddd, MMM Do YYYY, h:mm:ss a")
+                }
+                
     var proj = new models.Post(json);
 
     proj.save(function(err, proj) {

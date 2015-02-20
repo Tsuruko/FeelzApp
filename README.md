@@ -30,7 +30,7 @@ app page template located in views/template_with_sidebar.handlebars
 ////////////////////////////////////////////////////////////////////////////////
 DATA TEMPLATES
 ////////////////////////////////////////////////////////////////////////////////
-post data is stored with the following fields:
+post data is stored with the following fields in the mongo model:
 
 "postCategory": String,
 "postTitle": String,
@@ -39,6 +39,16 @@ post data is stored with the following fields:
 "bumpCount": Number,
 "date": Date,
 "localDate": String
+
+in the json file, post data is stored as:
+
+"postCategory": String,
+"postTitle": String,
+"postInfo": String,
+"fullPost": String,
+"bumpCount": Number
+
+date and localDate fields are added in initDB.js
 
 user data is stored with the following fields:
 

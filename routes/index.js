@@ -1,6 +1,7 @@
 // Get all of our post data
 var data = require('../postData.json');
 var models = require('../models');
+var moment = require('moment');
 
 exports.viewHome = function(req, res){
 
@@ -16,12 +17,6 @@ exports.viewHome = function(req, res){
                 .exec(renderPosts);
 
           function renderPosts(err, posts) {
-            for (i = 0; i < posts.length; i++) {
-              var date = new Date(posts[i]["localDate"]);
-              posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
-             
-            }
-
             var loginPosts = {"username": login[0]["username"],
                               "posts": posts
                              };
@@ -46,11 +41,6 @@ exports.sortByDateBump = function(req, res) {
         .exec(checkLogin);
 
       function checkLogin(err, login) {
-        for (i = 0; i < posts.length; i++) {
-          var date = new Date(posts[i]["localDate"]);
-          posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
-         
-        }
         var loginPosts = {"username": login[0]["username"],
                           "posts": posts
                          };
@@ -71,11 +61,6 @@ exports.sortByBump = function(req, res) {
         .exec(checkLogin);
 
       function checkLogin(err, login) {
-        for (i = 0; i < posts.length; i++) {
-          var date = new Date(posts[i]["localDate"]);
-          posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
-         
-        }
         var loginPosts = {"username": login[0]["username"],
                           "posts": posts
                          };
@@ -113,11 +98,6 @@ exports.viewCategory = function(req, res){
         .exec(checkLogin);
 
       function checkLogin(err, login) {
-        for (i = 0; i < posts.length; i++) {
-          var date = new Date(posts[i]["localDate"]);
-          posts["localDate"] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
-         
-        }
         var loginPosts = {"username": login[0]["username"],
                           "posts": posts
                          };
@@ -131,15 +111,15 @@ exports.viewCategory = function(req, res){
 exports.pushPost = function(req, res){
   var form_data = req.body;
 
-  var d = new Date();
+  var newDate = moment(new Date()).utcOffset("-08:00")
   var newPost = new models.Post( {
     "postCategory": form_data.postCategory,
     "postTitle": form_data.postTitle,
     "postInfo": form_data.postInfo,
     "fullPost": form_data.fullPost,
     "bumpCount": form_data.bumpCount,
-    "date": d,
-    "localDate": d.toLocaleString()
+    "date": newDate,
+    "localDate": newDate.format("ddd, MMM Do YYYY, h:mm:ss a")
   });
 
   newPost.save(afterPush);
