@@ -1,9 +1,5 @@
-
-//$("#changePasswordButton").click(togglePassButton);
-
-
 $("#submitChanges").click(function changePassword(e) {
-
+  //wizard of oz this
   /*  ie:
     $.post('/post/bumpPost', json, function test(result) {
       //console.log(result);

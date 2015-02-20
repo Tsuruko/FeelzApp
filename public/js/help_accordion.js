@@ -5,6 +5,8 @@ $(document).ready(function() {
     }
  
     $('.accordion-section-title').click(function(e) {
+        
+        e.preventDefault();
         // Grab current anchor value
         var currentAttrValue = $(this).attr('href');
  
@@ -18,7 +20,6 @@ $(document).ready(function() {
             // Open up the hidden content panel
             $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
         }
- 
-        e.preventDefault();
+        
     });
 });
