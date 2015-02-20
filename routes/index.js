@@ -13,7 +13,7 @@ exports.viewHome = function(req, res){
       if ( login.length != 0) {
           models.Post
                 .find()
-                .sort('-date')
+                .sort({'date': -1})
                 .exec(renderPosts);
 
           function renderPosts(err, posts) {

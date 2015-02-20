@@ -45,14 +45,14 @@ function onceClear(err) {
 
     var newDate = moment(new Date()).utcOffset("-08:00");
 
-    var json = {  "postCategory": postData[i]["postCategory"],
-                  "postTitle": postData[i]["postTitle"],
-                  "postInfo": postData[i]["postInfo"],
-                  "fullPost": postData[i]["fullPost"],
-                  "bumpCount": postData[i]["bumpCount"],
-                  "date:": newDate.toDate(),
-                  "localDate:": newDate.format("ddd, MMM Do YYYY, h:mm:ss a")
-                }
+    var json = {"postCategory": postData[i]["postCategory"],
+                "postTitle": postData[i]["postTitle"],
+                "postInfo": postData[i]["postInfo"],
+                "fullPost": postData[i]["fullPost"],
+                "bumpCount": postData[i]["bumpCount"],
+                "date": newDate.toDate(),
+                "localDate": newDate.format("ddd, MMM Do YYYY, h:mm:ss a")
+            };
                 
     var proj = new models.Post(json);
 
@@ -60,6 +60,7 @@ function onceClear(err) {
       if(err) console.log(err);
 
       to_save_count--;
+      //console.log(proj);
       console.log(to_save_count + ' left to save');
       if(to_save_count <= 0) {
         console.log('DONE');
