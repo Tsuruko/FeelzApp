@@ -9,9 +9,7 @@ exports.viewHome = function(req, res){
         .exec(checkLogin);
 
   function checkLogin(err, login) {
-      console.log(login.length);
       if ( login.length != 0) {
-        console.log("rendering home");
           models.Post
                 .find()
                 .sort('-date')
@@ -127,7 +125,6 @@ exports.pushPost = function(req, res){
   }
 
   var d = new Date();
-  console.log(d);
   var newPost = new models.Post( {
     "postCategory": newCategory,
     "postTitle": form_data.postTitle,
@@ -138,7 +135,6 @@ exports.pushPost = function(req, res){
     "localDate": d.toLocaleString()
   });
 
-  console.log(d.toLocaleString());
   newPost.save(afterPush);
   function afterPush(err) {
     if (err) {

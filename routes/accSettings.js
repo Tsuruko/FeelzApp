@@ -12,20 +12,15 @@ exports.viewAccSettings = function(req, res) {
 			console.log(err);
 			res.send(500);
 		}
-
-		console.log(info);
-
 		var loginInfo = {"username": info[0]["username"],
+						 "email": info[0]["email"],
 						 "password": info[0]["password"]
 						}
-
-		console.log(loginInfo);
 
 		res.render('accSettings', loginInfo);
 	}
 	
 };
-
 
 exports.changePass = function(req, res) {
 	var old = req.query.oldPassword;
@@ -43,10 +38,9 @@ exports.changePass = function(req, res) {
 		}
 
 		var loginInfo = { "username": info[0]["username"],
+						  "email": info[0]["email"],
 						  "password": info[0]["password"]
 		}
-
-		console.log(loginInfo);
 		res.render('accSettings', loginInfo);
 	}
 }

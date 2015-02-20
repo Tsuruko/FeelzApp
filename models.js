@@ -17,6 +17,7 @@ exports.Post = Mongoose.model('Post', PostSchema);
 
 var loginSchema = new Mongoose.Schema({
 	"username": String,
+	"email": String,
 	"password": String
 });
 

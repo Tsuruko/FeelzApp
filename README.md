@@ -43,6 +43,7 @@ post data is stored with the following fields:
 user data is stored with the following fields:
 
 "username": String,
+"email": String,
 "password": String
 
 

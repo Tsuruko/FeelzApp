@@ -19,6 +19,7 @@ exports.submitLogin = function(req, res){
 	
 	var newLogin = new models.LoggedIn ( {
 		"username": entered_username,
+		"email": entered_username + "@feelzapp.com",
 		"password": entered_password
 	});
 
