@@ -13,7 +13,7 @@ exports.viewHome = function(req, res){
       if ( login.length != 0) {
           models.Post
                 .find()
-                .sort({'date': -1})
+                .sort({'dateTime': -1})
                 .exec(renderPosts);
 
           function renderPosts(err, posts) {
@@ -32,7 +32,7 @@ exports.viewHome = function(req, res){
 exports.sortByDateBump = function(req, res) {
   models.Post
         .find()
-        .sort({'date':-1, 'bumpCount':-1})
+        .sort({'dateDay': 1, 'bumpCount':-1})
         .exec(renderPosts);
 
   function renderPosts(err, posts) {
@@ -118,8 +118,10 @@ exports.pushPost = function(req, res){
     "postInfo": form_data.postInfo,
     "fullPost": form_data.fullPost,
     "bumpCount": form_data.bumpCount,
-    "date": newDate,
-    "localDate": newDate.format("ddd, MMM Do YYYY, h:mm:ss a")
+    "dateTime": newDate.toDate(),
+    "dateString": newDate.format("ddd, MMM Do YYYY, h:mm:ss a"),
+    "dateDay": newDate.format("YYYYMMDD")
+
   });
 
   newPost.save(afterPush);

@@ -50,8 +50,9 @@ function onceClear(err) {
                 "postInfo": postData[i]["postInfo"],
                 "fullPost": postData[i]["fullPost"],
                 "bumpCount": postData[i]["bumpCount"],
-                "date": newDate.toDate(),
-                "localDate": newDate.format("ddd, MMM Do YYYY, h:mm:ss a")
+                "dateTime": newDate.toDate(),
+                "dateString": newDate.format("ddd, MMM Do YYYY, h:mm:ss a"),
+                "dateDay": newDate.format("YYYYMMDD")
             };
                 
     var proj = new models.Post(json);
