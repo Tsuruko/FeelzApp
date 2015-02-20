@@ -1,6 +1,13 @@
-// Get all of our post data
-//var data = require('../postData.json');
+
+var models = require('../models');
 
 exports.viewHelp = function(req, res){
-	res.render('help');
+	models.LoggedIn
+	    .find()
+	    .exec(checkLogin);
+
+	function checkLogin(err, login) {
+		var user = {"username": login[0]["username"]};
+		res.render('help', user);
+	}
 };

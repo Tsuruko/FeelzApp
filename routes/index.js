@@ -20,11 +20,11 @@ exports.viewHome = function(req, res){
           function renderPosts(err, posts) {
             for (i = 0; i < posts.length; i++) {
               var date = new Date(posts[i]["localDate"]);
-              
               posts["localDate"] = date.toLocaleString();
              
             }
-            var loginPosts = {"login": login,
+
+            var loginPosts = {"username": login[0]["username"],
                               "posts": posts
                              };
 
@@ -43,7 +43,23 @@ exports.sortByBump = function(req, res) {
         .exec(renderPosts);
 
   function renderPosts(err, posts) {
-    res.render('index', {'posts':posts});
+      models.LoggedIn
+        .find()
+        .exec(checkLogin);
+
+      function checkLogin(err, login) {
+        for (i = 0; i < posts.length; i++) {
+          var date = new Date(posts[i]["localDate"]);
+          posts["localDate"] = date.toLocaleString();
+         
+        }
+        var loginPosts = {"username": login[0]["username"],
+                          "posts": posts
+                         };
+
+        res.render('index', loginPosts);
+      }
+
   }
 }
 
@@ -71,7 +87,22 @@ exports.viewCategory = function(req, res){
         .exec(renderCategory);
 
   function renderCategory(err, posts) {
-    res.render('index', {'posts': posts});
+      models.LoggedIn
+        .find()
+        .exec(checkLogin);
+
+      function checkLogin(err, login) {
+        for (i = 0; i < posts.length; i++) {
+          var date = new Date(posts[i]["localDate"]);
+          posts["localDate"] = date.toLocaleString();
+         
+        }
+        var loginPosts = {"username": login[0]["username"],
+                          "posts": posts
+                         };
+
+        res.render('index', loginPosts);
+      }
   }
 
 };
