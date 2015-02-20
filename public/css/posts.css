@@ -50,6 +50,7 @@
 	position: fixed;
 	background-color: rgba(0,0,0,0.5);
 	overflow: auto;
+	min-height: 200px;
 }
 
  /*  new post page */
@@ -78,11 +79,11 @@ form {
 
 #newpost_form {
 	position:absolute;
+	min-height: 200px;
 	width: 90%;
 	left: 5%;
 	height: 80%;
 	top: 10%;
-	min-height: 200px;
 	/*font-family:'Raleway',sans-serif */
 }
 
