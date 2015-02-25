@@ -144,7 +144,6 @@ function bump(e) {
                  "bumpCount": bumpCount
                 };
     $.post('/post/bumpPost', json, function (result) {
-      //console.log(result);
       window.location.href = '/'; // reload the page
     });
 }
