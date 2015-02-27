@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>AboutFeelzApp</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no ">
+		<!-- bootstrap css files -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- feelzapp universal css files -->
+		<link href="/css/simple-sidebar.css" rel="stylesheet">
+		<link href="/css/feelzNaviBar.css" rel="stylesheet">
+		<link href="css/FeelzApp.css" rel="stylesheet">
+		<!-- page css files -->
+		<link href="/css/about_and_help.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div>
+			<!-- fixed position navibar on top of screen -->
+			{{>feelzNaviBar}}
+
+
+
+			<div id="page-content-wrapper" class="col-md-10"> 
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<!-- page content here -->
+							<div class="panel panel-info">
+
+								<div class="panel-heading">
+									<h1 class="panel-title">Menu</h1>
+								</div>
+
+								<div class="panel-body">
+									<div class="accordion">
+										<div class="accordion-section">
+											<a class="accordion-section-title" href="#accordion-1">Categories</a>
+											
+											<div id="accordion-1" class="accordion-section-content">
+												<ul>
+													<li role="presentation"><a href="/sort/date">Newest</a></li>
+													<li role="presentation"><a href="/sort/date/bump">Best Today</a></li>
+													<li role="presentation"><a href="/sort/bump">Top posts</a></li>	
+												</ul>
+										</div>
+										<div class="accordion-section">
+											<a class="accordion-section-title" href="#accordion-2">Moods</a>
+											
+											<div id="accordion-2" class="accordion-section-content">
+												<ul>
+													<li role="presentation"><a href="/category/1">Chill</a></li> <!-- Grey -->
+													<li role="presentation"><a href="/category/2">Sad</a></li> <!-- Blue -->
+													<li role="presentation"><a href="/category/3">Good</a></li> <!-- Green -->
+													<li role="presentation"><a href="/category/4">Party</a></li> <!-- Purple -->
+													<li role="presentation"><a href="/category/5">Happy</a></li> <!-- Yellow -->
+													<li role="presentation"><a href="/category/6">Angry</a></li> <!-- Red -->
+												</ul>
+											</div>
+										</div>
+										<div class="accordion-section">
+											<a class="accordion-section-title" href="/routes/help">Help</a>
+										</div>
+										<div class="accordion-section">
+											<a class="accordion-section-title" href="/routes/about">About</a>
+										</div>
+										<div class="accordion-section">
+											<a class="accordion-section-title" href="/routes/settings">Settings</a>
+										</div>
+										<div class="accordion-section">
+											<a class="accordion-section-title" href="/routes/help">Logout</a>
+										</div>
+									</div>
+
+							 	 </div>
+							 
+							 </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end page-content-wrapper -->
+		</div>
+		<!-- end wrapper-->
+	</body>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- feelzApp universal js files -->
+	<script src="/js/feelzApp.js"></script>
+	<!-- page js files -->
+	<script src="/js/help_accordion.js"></script>
+
+</html>

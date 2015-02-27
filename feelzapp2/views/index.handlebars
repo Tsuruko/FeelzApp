@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>FeelzApp</title>	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no ">
+		<!-- bootstrap css files -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- feelzapp universal css files -->
+		<link href="/css/simple-sidebar.css" rel="stylesheet">
+		<link href="/css/feelzNaviBar.css" rel="stylesheet">
+		<link href="/css/FeelzApp.css" rel="stylesheet">
+		<!-- page css files -->
+		<link href="/css/posts.css" rel="stylesheet">
+	</head>
+
+	<!-- body for the titlebar description and newPost popup -->
+	<body>
+		<div>
+			<!-- fixed position navibar on top of screen -->
+			{{>feelzNaviBar}}
+
+			<div id="page-content-wrapper" class="col-md-10"> 
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<!-- home page posts list-->
+							<div class="alert alert-info alert-dismissible" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<strong>Information:</strong> New to Feelz? Click Help on the sidebar menu
+							</div>
+							{{#each posts}}
+								{{>postSnippet}}
+							{{/each}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end page-content-wrapper -->
+
+			<!-- new post popup form -->
+			{{> newPost}}
+			<!-- post popup -->
+			{{>postFull}}
+			
+		</div>
+		<!-- end wrapper-->
+
+	</body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- feelzApp universal js files -->
+
+	<!-- page js files -->
+	<script src="/js/posts.js"></script>
+
+</html>

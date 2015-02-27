@@ -1,0 +1,29 @@
+{
+	"users": [
+		{
+			"username": "admin",
+			"email": "admin@feelzapp.com",
+			"password": "admin"
+		},
+		{
+			"username": "admin1",
+			"email": "admin1@feelzapp.com",
+			"password": "admin1"
+		},
+		{
+			"username": "admin2",
+			"email": "admin2@feelzapp.com",
+			"password": "admin2"
+		},
+		{
+			"username": "user",
+			"email": "user@feelzapp.com",
+			"password": "user"
+		},
+		{
+			"username": "user1",
+			"email": "user1@feelzapp.com",
+			"password": "user1"
+		}
+	]
+}
