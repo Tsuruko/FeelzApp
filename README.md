@@ -26,6 +26,7 @@ add body "{padding-top: 70px; }" to css for navibar compensation
 static code archived
 
 app page template located in views/template_with_sidebar.handlebars
+templates for the navbar, sidebar, and post formats located in views/partials
 
 ////////////////////////////////////////////////////////////////////////////////
 DATA TEMPLATES
