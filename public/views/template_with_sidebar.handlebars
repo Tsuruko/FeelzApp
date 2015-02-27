@@ -4,7 +4,7 @@
 	<head>
 		<title>FeelzApp</title>	
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no ">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- bootstrap css files -->
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -13,14 +13,16 @@
 		<link href="/css/feelzNaviBar.css" rel="stylesheet">
 		<link href="/css/FeelzApp.css" rel="stylesheet">
 		<!-- page css files -->
-		<link href="/css/posts.css" rel="stylesheet">
+		
 	</head>
 
 	<!-- body for the titlebar description and newPost popup -->
 	<body>
-		<div>
+		<div id="wrapper">
 			<!-- fixed position navibar on top of screen -->
 			{{>feelzNaviBar}}
+
+			{{> sideBar}}
 
 			<div id="page-content-wrapper" class="col-md-10"> 
 				<div class="container-fluid">
@@ -56,8 +58,7 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<!-- feelzApp universal js files -->
-
+	<script src="/js/feelzApp.js"></script>
 	<!-- page js files -->
-	<script src="/js/posts.js"></script>
 
 </html>
