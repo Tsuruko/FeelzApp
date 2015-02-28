@@ -20,7 +20,7 @@ exports.viewHome = function(req, res){
                               "posts": posts
                              };
 
-            res.render('index', loginPosts);
+            res.render('index_alt', loginPosts);
           }
 
       } else res.render('login');
