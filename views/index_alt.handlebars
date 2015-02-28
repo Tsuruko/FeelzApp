@@ -18,36 +18,21 @@
 
 	<!-- body for the titlebar description and newPost popup -->
 	<body>
-		<div id="wrapper">
-			<!-- fixed position navibar on top of screen -->
-			{{>feelzNaviBar_alt}}
+		<!-- fixed position navibar on top of screen -->
+		{{>feelzNaviBar_alt}}
 
-			<div id="page-content-wrapper" class="col-md-10"> 
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-lg-12">
-							<!-- home page posts list-->
-							<div class="alert alert-info alert-dismissible" role="alert">
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<strong>Information:</strong> New to Feelz? Click Help on the sidebar menu
-							</div>
-							{{#each posts}}
-								{{>postSnippet}}
-							{{/each}}
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end page-content-wrapper -->
+		<!-- new post popup form -->
+		{{> newPost}}
 
-			<!-- new post popup form -->
-			{{> newPost}}
-			<!-- post popup -->
-			{{>postFull}}
-			
+		<!-- home page posts list-->
+		<div class="container">
+			{{#each posts}}
+				{{>postSnippet}}
+			{{/each}}
 		</div>
-		<!-- end wrapper-->
 
+		<!-- post popup -->
+		{{>postFull}}
 	</body>
 
     <!-- Bootstrap core JavaScript

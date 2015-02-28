@@ -18,41 +18,34 @@
 
 <body>
 
-	<div id="wrapper">
+	<!-- fixed position navibar on top of screen -->
+	{{>feelzNaviBarNoPost_alt}}
 
-		<!-- fixed position navibar on top of screen -->
-		{{>feelzNaviBarNoPost_alt}}
+	<div class="panel panel-info">
 
-		<div id="page-content-wrapper" class="col-md-10"> 
-
-		<div class="panel panel-info">
-
-				<div class="panel-heading">
-					<h1 class="panel-title">Account Settings</h1>
-				</div>
-
-				<div class="panel-body">
-					<p>Userame: {{username}}</p>
-					<p>Email: {{email}}</p>
-
-					<a id="changePasswordButton" name="changePasswordButton"type="button">Change password</a>
-
-					<!-- change password form method="get" action="/changePassword" -->
-					<form id="changePasswordForm"  name="changePasswordForm" " onsubmit="return checkForm(this);>
-						Old Password: <input id="oldPassword" type="text" name="oldPassword" placeholder="old password"><br>
-						New Password: <input id="newPassword" type="password" name="pwd1" placeholder="new password"><br>
-						Confirm New Password: <input id="pwd2" type="password" name="confirmNewPassword" placeholder="new password"><br>
-						<input type="submit" id="submitChanges" class="btn btn-default" value="Update"></input>
-					</form>
-
-					<p>Facebook: </p>
-
-			 	 </div>
-			</div>
-			
-			<a href="/">Back to Homepage</a>
-
+		<div class="panel-heading">
+			<h1 class="panel-title">Account Settings</h1>
 		</div>
+
+		<div class="panel-body">
+			<p>Userame: {{username}}</p>
+			<p>Email: {{email}}</p>
+
+			<a id="changePasswordButton" name="changePasswordButton"type="button">Change password</a>
+
+			<!-- change password form method="get" action="/changePassword" -->
+			<form id="changePasswordForm"  name="changePasswordForm" " onsubmit="return checkForm(this);>
+				Old Password: <input id="oldPassword" type="text" name="oldPassword" placeholder="old password"><br>
+				New Password: <input id="newPassword" type="password" name="pwd1" placeholder="new password"><br>
+				Confirm New Password: <input id="pwd2" type="password" name="confirmNewPassword" placeholder="new password"><br>
+				<input type="submit" id="submitChanges" class="btn btn-default" value="Update"></input>
+			</form>
+
+			<p>Facebook: </p>
+		</div>
+		
+		<a href="/">Back to Homepage</a>
+
 	</div>
 
 </body>
