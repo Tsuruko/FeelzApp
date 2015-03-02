@@ -13,13 +13,3 @@ $('#logoutButton').click( function(e) {
 
 });
 
-
-$(".version_a").click(function(){
-//add your Woopra tracking code for version A's like button click event
-woopra.track("a_version_menu_click");
-})
-
-$(".version_b").click(function(){
-//add your Woopra tracking code for version A's like button click event
-woopra.track("b_version_menu_click");
-})
