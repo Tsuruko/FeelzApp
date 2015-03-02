@@ -8,6 +8,12 @@ exports.viewHelp = function(req, res){
 
 	function checkLogin(err, login) {
 		var user = {"username": login[0]["username"]};
-		res.render('help', user);
+		
+		var random_num = Math.random();
+		if (random_num > 0.5) {
+			res.render('help', user);
+		} else {
+			res.render('help_alt', user);
+		}
 	}
 };

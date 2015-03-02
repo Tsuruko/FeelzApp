@@ -8,6 +8,12 @@ exports.viewAbout = function(req, res){
 
 	function checkLogin(err, login) {
 		var user = {"username": login[0]["username"]};
-		res.render('about', user);
+
+		var random_num = Math.random();
+		if (random_num > 0.5) {
+			res.render('about', user);
+		} else {
+			res.render('about_alt', user);
+		}
 	}
 };

@@ -17,7 +17,12 @@ exports.viewAccSettings = function(req, res) {
 						 "password": info[0]["password"]
 						}
 
-		res.render('accSettings', loginInfo);
+		var random_num = Math.random();
+		if (random_num > 0.5) {
+			res.render('accSettings', loginInfo);
+		} else {
+			res.render('accSettings_alt', loginInfo);
+		}
 	}
 	
 };

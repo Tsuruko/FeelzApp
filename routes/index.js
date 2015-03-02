@@ -20,7 +20,13 @@ exports.viewHome = function(req, res){
                               "posts": posts
                              };
 
-            res.render('index_alt', loginPosts);
+            var random_num = Math.random();
+            if(random_num > 0.5){
+               res.render('index', loginPosts);
+            }else{
+               res.render('index_alt', loginPosts);
+            }
+
           }
 
       } else res.render('login');
@@ -43,7 +49,12 @@ exports.sortByDateBump = function(req, res) {
         var loginPosts = {"username": login[0]["username"],
                           "posts": posts
                          };
-        res.render('index', loginPosts);
+        var random_num = Math.random();
+        if(random_num > 0.5) {
+           res.render('index', loginPosts);
+        } else {
+           res.render('index_alt', loginPosts);
+        }
       }
   }
 }
@@ -63,7 +74,13 @@ exports.sortByBump = function(req, res) {
         var loginPosts = {"username": login[0]["username"],
                           "posts": posts
                          };
-        res.render('index', loginPosts);
+
+        var random_num = Math.random();
+        if (random_num > 0.5) {
+           res.render('index', loginPosts);
+        } else {
+           res.render('index_alt', loginPosts);
+        }
       }
   }
 }
@@ -101,7 +118,12 @@ exports.viewCategory = function(req, res){
                           "posts": posts
                          };
 
-        res.render('index', loginPosts);
+        var random_num = Math.random();
+        if (random_num > 0.5) {
+           res.render('index', loginPosts);
+        } else {
+           res.render('index_alt', loginPosts);
+        }
       }
   }
 
