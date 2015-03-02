@@ -31,6 +31,13 @@ var local_database_uri  = 'mongodb://localhost/' + local_database_name
 var database_uri = process.env.MONGOLAB_URI || local_database_uri
 mongoose.connect(database_uri);
 
+//global random variable
+var random_num = Math.random();
+
+app.configure(function() {
+	app.set('random_num', random_num); 
+});
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -73,7 +80,6 @@ app.get('/Signup', signup.viewSignup);
 app.get('/SignupFormSubmit', signup.submitSignup);
 app.get('/Forgot_Password', forgotPass.viewForgotPass);
 app.get('/Logout', logout.submitLogout);
-
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

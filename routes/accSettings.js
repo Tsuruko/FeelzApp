@@ -17,7 +17,7 @@ exports.viewAccSettings = function(req, res) {
 						 "password": info[0]["password"]
 						}
 
-		var random_num = Math.random();
+		var random_num = req.app.get('random_num');
 		if (random_num > 0.5) {
 			res.render('accSettings', loginInfo);
 		} else {
@@ -46,6 +46,12 @@ exports.changePass = function(req, res) {
 						  "email": info[0]["email"],
 						  "password": info[0]["password"]
 		}
-		res.render('accSettings', loginInfo);
+
+		var random_num = req.app.get('random_num');
+		if (random_num > 0.5) {
+			res.render('accSettings', loginInfo);
+		} else {
+			res.render('accSettings_alt', loginInfo);
+		}
 	}
 }

@@ -3,7 +3,8 @@ var models = require('../models');
 var moment = require('moment');
 
 exports.viewHome = function(req, res){
-
+  var random_num = Math.random();
+  req.app.set('random_num', random_num); 
   models.LoggedIn
         .find()
         .exec(checkLogin);
@@ -20,10 +21,9 @@ exports.viewHome = function(req, res){
                               "posts": posts
                              };
 
-            var random_num = Math.random();
-            if(random_num > 0.5){
+            if(random_num > 0.5) {
                res.render('index', loginPosts);
-            }else{
+            } else {
                res.render('index_alt', loginPosts);
             }
 
@@ -49,7 +49,7 @@ exports.sortByDateBump = function(req, res) {
         var loginPosts = {"username": login[0]["username"],
                           "posts": posts
                          };
-        var random_num = Math.random();
+        var random_num = req.app.get('random_num');
         if(random_num > 0.5) {
            res.render('index', loginPosts);
         } else {
@@ -75,7 +75,7 @@ exports.sortByBump = function(req, res) {
                           "posts": posts
                          };
 
-        var random_num = Math.random();
+        var random_num = req.app.get('random_num');
         if (random_num > 0.5) {
            res.render('index', loginPosts);
         } else {
@@ -118,7 +118,7 @@ exports.viewCategory = function(req, res){
                           "posts": posts
                          };
 
-        var random_num = Math.random();
+        var random_num = req.app.get('random_num');
         if (random_num > 0.5) {
            res.render('index', loginPosts);
         } else {
