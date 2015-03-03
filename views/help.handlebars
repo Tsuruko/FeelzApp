@@ -11,7 +11,7 @@
 		<link href="/css/feelzNaviBar.css" rel="stylesheet">
 		<link href="css/FeelzApp.css" rel="stylesheet">
 		<!-- page css files -->
-		<link href="/css/about_and_help.css" rel="stylesheet">
+
 		<!-- woopra a/b testing tracking script -->
 		{{> tracking_code_script}}
 	</head>
@@ -24,66 +24,81 @@
 
 			{{> sideBar}}
 
+			<h3>Help with the Feelz</h3>
 			<div id="page-content-wrapper" class="col-md-10"> 
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-lg-12">
 							<!-- page content here -->
-
-							<div class="panel panel-info">
-
-								<div class="panel-heading">
-									<h1 class="panel-title">Help with the Feelz</h1>
-								</div>
-
-								<div class="panel-body">
-									<div class="accordion">
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-1">Creating an Account</a>
-											
-											<div id="accordion-1" class="accordion-section-content">
-												<img src="images/signup_button.png" class="help_images"></br>
-												<p>Creating an account is super easy and fun here on the FeelzApp. Just click on the "Sign Up HERE!" button on the Log In screen and you'll be on your way!</p>
-											</div>
-										</div>
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-2">User Log-In</a>
-											
-											<div id="accordion-2" class="accordion-section-content">
-												<h6><b>How to Log In</b></h6>
-												<p>You can log in to you account by simply entering you user information into the Log In screen.</p>
-												<h6><b>How to Log Out</b></h6>
-												<p>You can log out of your account by clicking on the "Log Out" from the drop-down menu.</p>
-											</div>
-										</div>
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-3">How to Post</a>
-											
-											<div id="accordion-3" class="accordion-section-content">
-												<img src="images/newpost_button.png" class="help_images"></br>
-												<p>You can post your Feelz by simply clicking on the "New Post" button on the top right corner of the main feed page and voila!</p>
-											</div>
-										</div>
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-4">Why Can't I Post?</a>
-											
-											<div id="accordion-4" class="accordion-section-content">
-												<p>If you are using Safari on an iPhone, chances are you may not be able to post. If you would like to post on FeelzApp, please download Google Chrome on your iPhone and use that as your browser.</p>
-											</div>
-										</div>
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-5">Bumping Posts</a>
-											
-											<div id="accordion-5" class="accordion-section-content">
-												<h6><b>I really liked a post I saw, how do I express this?</b></h6>
-												<img src="images/bump_button.png" class="help_images"></br>
-												<p>Feeling a post? Awesome! Go ahead and tap/click on the post and select "bump" from the top right corner. This will move the post to the top of the feed and give it Feel points!</p>
-											</div>
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingOne">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Creating an Account</a>
+										</h4>
+							    	</div>
+									<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											<img src="images/signup_button.png" class="help_images"></br>
+											<p>Creating an account is super easy and fun here on the FeelzApp. Just click on the "Sign Up HERE!" button on the Log In screen and you'll be on your way!</p>
 										</div>
 									</div>
-							 	 </div>
-							 
-							 </div>
+								</div>
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">User Log-In</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+										<div class="panel-body">
+											<h6><b>How to Log In</b></h6>
+											<p>You can log in to you account by simply entering you user information into the Log In screen.</p>
+											<h6><b>How to Log Out</b></h6>
+											<p>You can log out of your account by clicking on the "Log Out" from the drop-down menu.</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingThree">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">How To Post</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="panel-body">
+											<img src="images/newpost_button.png" class="help_images"></br>
+											<p>You can post your Feelz by simply clicking on the "New Post" button on the top right corner of the main feed page and voila!</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingFour">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">Why Can't I Post?</a>
+										</h4>
+									</div>
+									<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+										<div class="panel-body">
+											<p>If you are using Safari on an iPhone, chances are you may not be able to post. If you would like to post on FeelzApp, please download Google Chrome on your iPhone and use that as your browser.</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingFive">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">Bumping Posts</a>
+										</h4>
+									</div>
+									<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+										<div class="panel-body">
+											<h6><b>I really liked a post I saw, how do I express this?</b></h6>
+											<img src="images/bump_button.png" class="help_images"></br>
+											<p>Feeling a post? Awesome! Go ahead and tap/click on the post and select "bump" from the top right corner. This will move the post to the top of the feed and give it Feel points!</p>
+										</div>
+									</div>
+								</div>
+							</div>
 
 							<div class="footer">
 								<footer>
@@ -109,8 +124,5 @@
 	<!-- feelzApp universal js files -->
 	<script src="/js/feelzApp.js"></script>
 	<!-- page js files -->
-	<script src="/js/help_accordion.js"></script>
-	
-
 	
 </html>

@@ -13,7 +13,7 @@
 		<link href="/css/feelzNaviBar.css" rel="stylesheet">
 		<link href="css/FeelzApp.css" rel="stylesheet">
 		<!-- page css files -->
-		<link href="/css/about_and_help.css" rel="stylesheet">
+
 		<!-- woopra a/b testing tracking script -->
 		{{> tracking_code_script}}
 	</head>
@@ -25,48 +25,61 @@
 
 			{{> sideBar}}
 
+			<h3>FeelzApp Information</h3>
 			<div id="page-content-wrapper" class="col-md-10"> 
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-lg-12">
 							<!-- page content here -->
-							<div class="panel panel-info">
-
-								<div class="panel-heading">
-									<h1 class="panel-title">About FeelzApp</h1>
-								</div>
-
-								<div class="panel-body">
-									<div class="accordion">
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-1">About the App</a>
-											
-											<div id="accordion-1" class="accordion-section-content">
-											<p>FeelzApp is your new diary. You can post anonymously or reveal your identity. Have a strong feeling? Happy? Sad? Angry? Let it out on the FeelzApp. Did you read a post that gave you the Feelz? Bump it to the top of the feed so others can get their Feelz on too. We're all friends here, so be nice! Enjoy!</br></p>
-											</div>
-										</div>
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-2">Our Team</a>
-											
-											<div id="accordion-2" class="accordion-section-content">
-												<h6><b>Mona</b></h6>
-												<img src="/images/mona.jpg" class="help_images">
-												<p>Mona is senior at UCSD. She is majoring in Computer Science with a focus on graphics. Her hobbies include dancing, video games, and skiing.</p>
-
-												<h6><b>Kevin</b></h6>
-												<img src="/images/kevin.jpg" class="help_images">
-												<p>Kevin is a junior at UCSD. He is majoring in Computer Engineering with a focus in Artificial Intelligence. His hobbies include playing basketball, working out, and listening to music.</p>
-
-												<h6><b>Julia</b></h6>
-												<img src="/images/julia.png" class="help_images">
-												<p>Julia is junior at UCSD. She is majoring in Cognitive Science with a specialization in Human-Computer Interaction and a minor in Computer Science. Her hobbies include getting tattoos, watching movies, and hanging out with her cat.</p>
-											</div>
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingOne">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">About FeelzApp</a>
+										</h4>
+							    	</div>
+									<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											FeelzApp is your new diary. You can post anonymously or reveal your identity. Have a strong feeling? Happy? Sad? Angry? Let it out on the FeelzApp. Did you read a post that gave you the Feelz? Bump it to the top of the feed so others can get their Feelz on too. We're all friends here, so be nice! Enjoy!
 										</div>
 									</div>
+								</div>
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Our Team</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+										<div class="panel-body">
+											<h6><b>Mona</b></h6>
+											<img src="/images/mona.jpg" class="help_images">
+											<p>Mona is senior at UCSD. She is majoring in Computer Science with a focus on graphics. Her hobbies include dancing, video games, and skiing.</p>
 
-							 	 </div>
-							 
-							 </div>
+											<h6><b>Kevin</b></h6>
+											<img src="/images/kevin.jpg" class="help_images">
+											<p>Kevin is a junior at UCSD. He is majoring in Computer Engineering with a focus in Artificial Intelligence. His hobbies include playing basketball, working out, and listening to music.</p>
+
+											<h6><b>Julia</b></h6>
+											<img src="/images/julia.png" class="help_images">
+											<p>Julia is junior at UCSD. She is majoring in Cognitive Science with a specialization in Human-Computer Interaction and a minor in Computer Science. Her hobbies include getting tattoos, watching movies, and hanging out with her cat.</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-info">
+									<div class="panel-heading" role="tab" id="headingThree">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Contact</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="panel-body">
+											<h6><b>Contact us at:</b></h6>
+											<p>thisIsFake@feelzapp.com</p>
+										</div>
+									</div>
+								</div>
+							</div>
 
 							<div class="footer">
 								<footer>
@@ -91,6 +104,5 @@
 	<!-- feelzApp universal js files -->
 	<script src="/js/feelzApp.js"></script>
 	<!-- page js files -->
-	<script src="/js/help_accordion.js"></script>
 
 </html>
