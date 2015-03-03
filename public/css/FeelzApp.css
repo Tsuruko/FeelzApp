@@ -13,26 +13,26 @@ body {
 	text-shadow: above;
 	background-color:#B8DBFF;
 	background-origin: border-box;	
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-	font-family: "Comic Sans MS", cursive, sans-serif;	
+	font-family: Arial, Helvetica, sans-serif;
 }
 h2 {
-	font-family: "Comic Sans MS", cursive, sans-serif;	
+	font-family: Arial, Helvetica, sans-serif;
 }
 h3 {
-	font-family: "Comic Sans MS", cursive, sans-serif;	
+	font-family:Arial, Helvetica, sans-serif;
 }
 h4 {
-	font-family: "Comic Sans MS", cursive, sans-serif;	
+	font-family: Arial, Helvetica, sans-serif;
 }
 h5 {
-	font-family: "Comic Sans MS", cursive, sans-serif;	
+	font-family: Arial, Helvetica, sans-serif;
 }
 h6 {
-	font-family: "Comic Sans MS", cursive, sans-serif;	
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .panel-info {
