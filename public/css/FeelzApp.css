@@ -10,9 +10,23 @@
 body { 
 	padding-top: 50px; 
 	text-align: center;
-    text-shadow: above;
-    background-color:#B8DBFF;
-    background-origin: border-box;	
+	text-shadow: above;
+	background-color:#B8DBFF;
+	background-origin: border-box;	
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h1 {
+	font-family: "Comic Sans MS", cursive, sans-serif;	
+}
+h2 {
+	font-family: "Comic Sans MS", cursive, sans-serif;	
+}
+h3 {
+	font-family: "Comic Sans MS", cursive, sans-serif;	
+}
+h4 {
+	font-family: "Comic Sans MS", cursive, sans-serif;	
 }
 
 .panel-info {
