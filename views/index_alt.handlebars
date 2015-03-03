@@ -28,6 +28,10 @@
 
 		<!-- home page posts list-->
 		<div class="container">
+			<div class="alert alert-info alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<strong>Information:</strong> New to Feelz? Click Help on the pull-down menu
+			</div>
 			{{#each posts}}
 				{{>postSnippet}}
 			{{/each}}
