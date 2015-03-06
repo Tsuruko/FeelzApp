@@ -40,7 +40,7 @@ function popupPost(e) {
   var cat = $(this).data("cat");
   var title = $(this).data("title");
   var info = $(this).data("full");
-  var bumpCount = $(this).data("bump");
+  var bumpCount = $(this).data("bump") + "&nbsp";
   var date = $(this).data("date");
 
   var id = $(this).data("monid");
