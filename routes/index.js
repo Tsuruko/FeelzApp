@@ -3,7 +3,7 @@ var models = require('../models');
 var moment = require('moment');
 
 exports.viewHome = function(req, res){
-  var random_num = Math.random();
+  var random_num = 1; //Math.random();  //removing ranomization a/b test
   req.app.set('random_num', random_num); 
   models.LoggedIn
         .find()
