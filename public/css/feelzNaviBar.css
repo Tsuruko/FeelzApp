@@ -5,6 +5,20 @@
 	text-align: left;
 }
 
+.navbar-brand {
+  width: 28%;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.logoImg {
+  width: 100%;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+}
+
 /* always show a collapsed menu icon */
 .navbar-header {
   float: none;
