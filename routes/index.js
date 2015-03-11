@@ -171,3 +171,24 @@ exports.bumpPost = function(req, res) {
   }
 
 };
+
+exports.deletePost = function(req, res) {
+  console.log("deleting post");
+  var postID = req.params.id;
+
+  // find the project and remove it
+  // YOU MUST send an OK response w/ res.send();
+  models.Post
+        .find({ "_id" : postID })
+        .remove()
+        .exec(afterRemoving);
+
+  function afterRemoving(err, projects) {
+    if (err) {
+      console.log(err);
+      res.send(500);
+    }
+    res.send("Ok");
+  }
+
+}
