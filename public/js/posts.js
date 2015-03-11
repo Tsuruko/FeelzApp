@@ -8,6 +8,16 @@ $(document).ready(function() {
   if (mq.matches) mobile = false;
 
   $(".postSnippet").click(popupPost);
+
+/*
+        $(".postSnippet").click(function(e) {
+          var id = $(this).data("monid");
+          $.post('/post/'+id+'/delete', function() {
+            window.location.href = '/';
+          });
+      });
+*/
+        
   $("#expandPost").click(popupPost);
 
   $("#bumpButton").click(bump);
