@@ -63,7 +63,7 @@ app.get('/', index.viewHome);
 app.post('/post/new', index.pushPost);
 app.post('/post/bumpPost', index.bumpPost);
 app.get('/category/:id', index.viewCategory);
-app.post('/post/:id/delete', index.deletePost);
+
 app.get('/sort/date', index.viewHome);
 app.get('/sort/date/bump', index.sortByDateBump);
 app.get('/sort/bump', index.sortByBump);

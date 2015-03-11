@@ -7,15 +7,7 @@ $(document).ready(function() {
   var mq = window.matchMedia( "(min-width: 768px)" );
   if (mq.matches) mobile = false;
 
-  //$(".postSnippet").click(popupPost);
-
-        $(".postSnippet").click(function(e) {
-          var id = $(this).data("monid");
-          $.post('/post/'+id+'/delete', function() {
-            window.location.href = '/';
-          });
-      });
-        
+  $(".postSnippet").click(popupPost);
   $("#expandPost").click(popupPost);
 
   $("#bumpButton").click(bump);
