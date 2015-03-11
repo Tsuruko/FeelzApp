@@ -75,6 +75,7 @@ app.get('/About', about.viewAbout);
 app.get('/Help', help.viewHelp);
 
 app.get('/Login', login.viewLogin);
+app.get('/Login_Facebook', login.viewLoginFB);
 app.get('/LoginFormSubmit', login.submitLogin);
 app.get('/Signup', signup.viewSignup);
 app.get('/SignupFormSubmit', signup.submitSignup);

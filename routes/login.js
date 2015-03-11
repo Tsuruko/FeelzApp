@@ -8,6 +8,10 @@ exports.viewLogin = function(req, res){
 	res.render('login');
 };
 
+exports.viewLoginFB = function(req, res){
+	models.LoggedIn.find().remove().exec();
+	res.render('login_fb');
+};
 
 exports.submitLogin = function(req, res){
 
