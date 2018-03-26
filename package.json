@@ -19,6 +19,6 @@
     "mongoose": "*"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "v9.9.0"
   }
 }
