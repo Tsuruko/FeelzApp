@@ -30,8 +30,13 @@ var local_database_name = 'feelzApp';
 var local_database_uri  = 'mongodb://localhost/' + local_database_name
 var database_uri = process.env.MONGODB_URI || local_database_uri
 
-
-mongoose.connect(database_uri);
+mongoose.connect(database_uri, function (err, res) {
+  if (err) { 
+    console.log ('ERROR connecting to: ' + database_uri + '. ' + err);
+  } else {
+    console.log ('Succeeded connected to: ' + database_uri);
+  }
+});
 
 //global random variable
 var random_num = Math.random();
