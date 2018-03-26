@@ -56,7 +56,7 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(methodOverride());
-app.use(express.cookieParser('Intro HCI secret key'));
+//app.use(express.cookieParser('Intro HCI secret key'));  //depreciated
 
 app.use(express.session({
     secret: 'a4f8071f-c873-4447-8ee2'
