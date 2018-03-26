@@ -4,6 +4,7 @@
  */
 
 var express = require('express');
+var methodOverride = require('method-override')
 var moment = require('moment');
 var http = require('http');
 var path = require('path');
@@ -54,14 +55,18 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.use(methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
-app.use(express.session());
+
+app.use(express.session({
+    secret: 'a4f8071f-c873-4447-8ee2'
+}));
+
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
+if (process.env.NODE_ENV === 'development') {
   app.use(express.errorHandler());
 }
 
